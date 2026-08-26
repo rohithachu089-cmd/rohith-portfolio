@@ -1,0 +1,12 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" rx="12" fill="#0D0909"/>
+  <rect x="15" y="15" width="570" height="370" rx="8" fill="none" stroke="#FF3B30" stroke-width="2" stroke-dasharray="6 6"/>
+  <rect x="25" y="25" width="550" height="350" rx="6" fill="#140E0E" stroke="rgba(255,59,48,0.3)" stroke-width="1"/>
+  
+  <circle cx="300" cy="130" r="50" fill="#FF3B30" fill-opacity="0.15" stroke="#FF3B30" stroke-width="2"/>
+  <path d="M290 115 H310 V135 C310 145 290 145 290 135 Z M285 115 H290 V125 H285 Z M310 115 H315 V125 H310 Z M300 145 V152 M292 142 H308" stroke="#FF3B30" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <text x="300" y="220" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" text-anchor="middle" letter-spacing="1">HACKATHON WINNER</text>
+  <text x="300" y="255" fill="#FF3B30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" text-anchor="middle">UNSTOP / INFO INSTITUTE HACKATHON</text>
+  <text x="300" y="290" fill="#B5B5B5" font-family="monospace" font-size="13" text-anchor="middle">OFFICIAL PROOF &amp; RECOGNITION</text>
+</svg>

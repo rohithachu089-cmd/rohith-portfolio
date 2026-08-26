@@ -1,0 +1,18 @@
+<svg width="600" height="340" viewBox="0 0 600 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sea Ocean Water Background -->
+  <rect width="600" height="340" fill="#0A2236"/>
+  <!-- Ocean Waves -->
+  <path d="M0 120 Q 150 90, 300 120 T 600 120 L 600 340 L 0 340 Z" fill="#0E2F4A"/>
+  <path d="M0 180 Q 150 150, 300 180 T 600 180 L 600 340 L 0 340 Z" fill="#123C5E"/>
+  <!-- Bright Orange Lifebuoy Float -->
+  <g transform="translate(300, 180)">
+    <ellipse cx="0" cy="0" rx="90" ry="55" fill="#FF5500" stroke="#CC3300" stroke-width="4"/>
+    <ellipse cx="0" cy="0" rx="45" ry="26" fill="#123C5E" stroke="#CC3300" stroke-width="3"/>
+    <!-- White Stripes on Buoy -->
+    <path d="M -70 -20 L -35 -10 L -45 15 L -80 10 Z" fill="#FFFFFF"/>
+    <path d="M 70 -20 L 35 -10 L 45 15 L 80 10 Z" fill="#FFFFFF"/>
+    <path d="M -15 -45 L 15 -45 L 10 -22 L -10 -22 Z" fill="#FFFFFF"/>
+    <path d="M -15 45 L 15 45 L 10 22 L -10 22 Z" fill="#FFFFFF"/>
+  </g>
+  <text x="30" y="310" fill="#E0E0E0" font-family="sans-serif" font-size="12" font-weight="bold">WATER DROWNING DETECTION &amp; RESCUE SYSTEM</text>
+</svg>

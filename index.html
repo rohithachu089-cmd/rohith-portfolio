@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohith R — Biomedical Engineer</title>
+  <meta name="description" content="I’m Rohith R., a Biomedical Engineering student focused on Robotics, Embedded Systems, AI, R&D, and Product Development. I build intelligent hardware solutions by combining electronics, firmware, mechanical design, and software. From myoelectric prosthetics to autonomous robots, I’m driven by one goal: turning real-world problems into working products through research, engineering, and innovation.">
+  <link rel="stylesheet" href="style.css?v=212">
+  <style>
+    /* DIRECT CONTENT VISIBILITY & 3-COLUMN x 2-ROW GRID OVERRIDE */
+    .fade-in {
+      opacity: 1 !important;
+      transform: none !important;
+      visibility: visible !important;
+    }
+
+    .featured-projects-grid,
+    .six-projects-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 28px !important;
+    }
+
+    @media (max-width: 1000px) {
+      .featured-projects-grid,
+      .six-projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .featured-projects-grid,
+      .six-projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+    }
+
+    .project-card,
+    .mini-project-card {
+      background: #120D0D !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-radius: 16px !important;
+      overflow: hidden !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      min-height: 520px !important;
+      height: auto !important;
+      transition: all 0.25s ease !important;
+      position: relative !important;
+    }
+
+    .project-image,
+    .mini-thumb-area {
+      width: 100% !important;
+      height: 300px !important;
+      overflow: hidden !important;
+      background: radial-gradient(circle at center, #181111 0%, #060404 90%) !important;
+      position: relative !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 0 !important;
+    }
+
+    .project-img,
+    .mini-thumb-img,
+    .project-image img,
+    .mini-thumb-area img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center !important;
+    }
+
+    .project-image img[src$=".svg"],
+    .mini-thumb-area img[src$=".svg"] {
+      object-fit: contain !important;
+      padding: 20px !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="logo">
+        <div class="logo-symbol">R</div>
+        <div>
+          <span class="logo-text">ROHITH R</span>
+          <span class="logo-sub">Biomedical Engineer</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="mailto:rohithachu089@gmail.com" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.85rem;">Let's Connect →</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV DRAWER -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#achievements" class="nav-link">Achievements</a>
+    <a href="#certifications" class="nav-link">Certifications</a>
+    <a href="mailto:rohithachu089@gmail.com" class="btn btn-primary" style="margin-top: 12px;">Let's Connect →</a>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <!-- GIANT BACKGROUND WATERMARK TYPOGRAPHY (SUBTLE BACKDROP) -->
+    <div class="hero-watermark-wrapper">
+      <div class="watermark-top">BIOMEDICAL</div>
+      <div class="watermark-main">ENGINEER</div>
+    </div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="hero-grid">
+        
+        <!-- LEFT COLUMN: HERO INTRO & CTAs -->
+        <div class="hero-content fade-in">
+          <div class="hero-greeting">Hi, I'm</div>
+          <h1 class="hero-name">Rohith R</h1>
+          <div class="hero-role-title">Biomedical Engineering • Robotics • Embedded Systems • AI • R&amp;D</div>
+          
+          <p class="hero-description">
+            I’m a Biomedical Engineering student focused on <strong style="color: #fff;">Robotics</strong>, <strong style="color: #fff;">Embedded Systems</strong>, <strong style="color: #fff;">AI</strong>, <strong style="color: #fff;">R&amp;D</strong>, and <strong style="color: #fff;">Product Development</strong>. I build intelligent hardware solutions by combining electronics, firmware, mechanical design, and software. From myoelectric prosthetics to autonomous robots, I’m driven by one goal: <span class="highlight-red" style="font-weight: 600;">turning real-world problems into working products through research, engineering, and innovation.</span>
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <span style="color:#FF3B30; font-size:1rem; margin-right:4px;">•</span> View My Projects →
+            </a>
+            <a href="https://drive.google.com/file/d/18oYhSnm9JcxaPO5CURGQ5dVQGc7MZzdj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              View Resume
+            </a>
+          </div>
+
+          <div class="social-links-bar">
+            <a href="https://www.linkedin.com/in/rohith-rramesh/" target="_blank" class="social-icon-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://github.com/rohithachu089-cmd" target="_blank" class="social-icon-btn" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-icon-btn" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="mailto:rohithachu089@gmail.com" class="social-icon-btn" aria-label="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- CENTER COLUMN: PROFILE PHOTO (CUTOUT) -->
+        <div class="hero-center-profile fade-in" style="transition-delay: 0.1s;">
+          <div class="profile-cutout-box">
+            <div class="profile-red-aura"></div>
+            <img 
+              src="assets/rohith-cutout.png?v=20260824" 
+              alt="Rohith R - Biomedical Engineer" 
+              class="profile-cutout-img"
+            >
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: CAPABILITY ITEMS & TELEMETRY -->
+        <div class="hero-right-caps fade-in" style="transition-delay: 0.2s;">
+          <div class="cap-item">
+            <div class="cap-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div>
+              <div class="cap-title">Biomedical Engineer</div>
+              <div class="cap-sub">Electronics • Robotics • AI</div>
+            </div>
+          </div>
+
+          <div class="cap-item">
+            <div class="cap-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M7 7l10 10M7 17L17 7"/></svg>
+            </div>
+            <div>
+              <div class="cap-title">Embedded Systems</div>
+              <div class="cap-sub">Firmware • Sensors • IoT</div>
+            </div>
+          </div>
+
+          <div class="cap-item">
+            <div class="cap-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <div>
+              <div class="cap-title">Product Developer</div>
+              <div class="cap-sub">Design • Prototype • Build</div>
+            </div>
+          </div>
+
+          <!-- BIOMEDICAL HUMAN HEART & PROSTHETIC ARM TELEMETRY WIDGET -->
+          <div class="biomedical-tech-card">
+            <div class="bio-widget-header">
+              <div class="bio-widget-title">
+                <span class="status-dot-pulse"></span>
+                BIOMEDICAL TELEMETRY
+              </div>
+              <div class="bio-tag">LIVE</div>
+            </div>
+
+            <div class="bio-widgets-grid">
+              <!-- ITEM 1: HUMAN HEART CARDIAC MONITOR -->
+              <div class="bio-sub-card">
+                <div class="bio-card-top">
+                  <div class="bio-icon-box">
+                    <svg class="heart-pulse-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF3B30" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="bio-card-heading">Human Heart Monitor</div>
+                    <div class="bio-card-val">72 <span class="bio-unit">BPM</span></div>
+                  </div>
+                </div>
+                <!-- SVG Heartbeat Wave ECG -->
+                <div class="ecg-wave-box">
+                  <svg width="100%" height="30" viewBox="0 0 200 30" preserveAspectRatio="none">
+                    <path d="M0 15 L40 15 L50 3 L60 27 L70 9 L80 19 L90 15 L200 15" stroke="#FF3B30" stroke-width="2" fill="none" class="ecg-line-anim"/>
+                  </svg>
+                </div>
+                <div class="bio-card-sub">Cardiac Rhythm &amp; Bio-Sensing</div>
+              </div>
+
+              <!-- ITEM 2: BIONIC PROSTHETIC ARM TELEMETRY -->
+              <div class="bio-sub-card">
+                <div class="bio-card-top">
+                  <div class="bio-icon-box">
+                    <svg class="arm-bionic-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF3B30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 17l4-4 4 4 8-8"/>
+                      <rect x="2" y="15" width="4" height="6" rx="1"/>
+                      <circle cx="12" cy="17" r="2"/>
+                      <path d="M12 15v-4l5-5"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="bio-card-heading">Prosthetic Arm Control</div>
+                    <div class="bio-card-val">sEMG <span class="bio-unit">senses</span></div>
+                  </div>
+                </div>
+                <div class="arm-telemetry-bar">
+                  <div class="arm-progress-fill"></div>
+                </div>
+                <div class="bio-card-sub">4-Grasp Modes • 95ms Latency</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HORIZONTAL STATISTICS STRIP (CLEAN SEPARATE BAR BELOW HERO) -->
+  <div class="hero-stats-strip fade-in">
+    <div class="container">
+      <div class="stats-card-grid">
+        <div class="stat-item">
+          <div class="stat-val">8+</div>
+          <div class="stat-lbl">Engineering Projects</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">7+</div>
+          <div class="stat-lbl">National Hackathons</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">1</div>
+          <div class="stat-lbl">India Book of Records</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">₹3L+</div>
+          <div class="stat-lbl">Funded R&amp;D Grant</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURED PROJECTS SECTION -->
+  <section class="section" id="projects">
+    <div class="container">
+      
+      <div class="projects-container-card fade-in">
+        <div class="projects-header-row">
+          <div class="projects-header-title">
+            <span class="red-dot"></span>
+            Featured Projects
+          </div>
+          <a href="#projects" class="view-all-link">
+            View All Projects <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- 6 PROJECT CARDS GRID (3-COLUMN x 2-ROW) -->
+        <div class="featured-projects-grid">
+          
+          <!-- ROW 1, CARD 1 (FLAGSHIP BIOMEDICAL/ROBOTICS PROJECT) -->
+          <div class="project-card featured-primary view-case-study-btn" data-project="project1" style="cursor: pointer;">
+            <div class="project-image">
+              <span class="flagship-tag">★ FLAGSHIP BIOMEDICAL PROJECT</span>
+              <span class="flagship-tag" style="background: rgba(18, 13, 13, 0.9); border: 1px solid rgba(255, 59, 48, 0.6); color: #fff; top: 12px; right: 12px; left: auto; font-size: 0.68rem; padding: 4px 10px;">▶ VIDEO DEMO</span>
+              <img src="assets/projects/bionic-hand-ball-grasp.jpg" alt="Myoelectric Prosthetic Arm & Bionic Hand — Real Hardware Test Bench" class="project-img" style="object-fit: cover; object-position: center;" onerror="this.onerror=null; this.src='assets/projects/bionic-hand.svg';">
+            </div>
+            <div class="project-card-body">
+              <div>
+                <h3 class="project-card-title">Myoelectric Prosthetic Arm &amp; Bionic Hand</h3>
+                <div class="project-card-cat">Biomedical • Robotics • sEMG Control</div>
+              </div>
+              <div class="project-card-footer">
+                <button type="button" class="btn-case-study view-case-study-btn" data-project="project1">
+                  <span>View Case Study &amp; Video</span>
+                  <span class="btn-arrow">→</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROW 1, CARD 2 -->
+          <div class="project-card view-case-study-btn" data-project="project2" style="cursor: pointer;">
+            <div class="project-image">
+              <span class="flagship-tag" style="background: rgba(18, 13, 13, 0.9); border: 1px solid rgba(255, 59, 48, 0.6); color: #fff; top: 12px; right: 12px; left: auto; font-size: 0.68rem; padding: 4px 10px;">▶ VIDEO DEMO</span>
+              <img src="assets/projects/agrox.jpg" alt="AgroX – Smart Pesticide Spraying Rover" class="project-img" onerror="this.onerror=null; this.src='assets/projects/agrox.svg';">
+            </div>
+            <div class="project-card-body">
+              <div>
+                <h3 class="project-card-title">AgroX – Smart Pesticide Spraying Rover</h3>
+                <div class="project-card-cat">AI • Robotics • IoT</div>
+              </div>
+              <div class="project-card-footer">
+                <button type="button" class="btn-case-study view-case-study-btn" data-project="project2">
+                  <span>View Case Study &amp; Video</span>
+                  <span class="btn-arrow">→</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROW 1, CARD 3 -->
+          <div class="project-card view-case-study-btn" data-project="project3" style="cursor: pointer;">
+            <div class="project-image">
+              <img src="assets/projects/plant-disease.jpg" alt="Plant Disease & Fruit Quality Detection" class="project-img" onerror="this.onerror=null; this.src='assets/projects/plant-disease.svg';">
+            </div>
+            <div class="project-card-body">
+              <div>
+                <h3 class="project-card-title">Plant Disease &amp; Fruit Quality Detection</h3>
+                <div class="project-card-cat">AI • Computer Vision</div>
+              </div>
+              <div class="project-card-footer">
+                <button type="button" class="btn-case-study view-case-study-btn" data-project="project3">
+                  <span>View Case Study</span>
+                  <span class="btn-arrow">→</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROW 2, CARD 4 -->
+          <div class="project-card view-case-study-btn" data-project="project4" style="cursor: pointer;">
+            <div class="project-image">
+              <span class="flagship-tag" style="background: rgba(18, 13, 13, 0.9); border: 1px solid rgba(255, 59, 48, 0.6); color: #fff; top: 12px; right: 12px; left: auto; font-size: 0.68rem; padding: 4px 10px;">▶ VIDEO DEMO</span>
+              <img src="assets/projects/peristaltic-pump.jpg" alt="Peristaltic Pump Control System" class="project-img" style="object-fit: cover;" onerror="this.onerror=null; this.src='assets/projects/peristaltic-pump.svg';">
+            </div>
+            <div class="project-card-body">
+              <div>
+                <h3 class="project-card-title">Peristaltic Pump Control System</h3>
+                <div class="project-card-cat">Embedded • Flow Control</div>
+              </div>
+              <div class="project-card-footer">
+                <button type="button" class="btn-case-study view-case-study-btn" data-project="project4">
+                  <span>View Case Study &amp; Video</span>
+                  <span class="btn-arrow">→</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROW 2, CARD 5 -->
+          <div class="project-card view-case-study-btn" data-project="project5" style="cursor: pointer;">
+            <div class="project-image">
+              <img src="assets/projects/drowning-detection-deployed.jpg" alt="Water Drowning Detection & Rescue System" class="project-img" onerror="this.onerror=null; this.src='assets/projects/drowning-detection.jpg';">
+            </div>
+            <div class="project-card-body">
+              <div>
+                <h3 class="project-card-title">Water Drowning Detection &amp; Rescue System</h3>
+                <div class="project-card-cat">Safety • IoT • Sensors</div>
+              </div>
+              <div class="project-card-footer">
+                <button type="button" class="btn-case-study view-case-study-btn" data-project="project5">
+                  <span>View Case Study</span>
+                  <span class="btn-arrow">→</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROW 2, CARD 6 -->
+          <div class="project-card view-case-study-btn" data-project="project6" style="cursor: pointer;">
+            <div class="project-image">
+              <img src="assets/projects/warehouse-amr.jpg" alt="Autonomous Mobile Robot (AMR) for Warehouse" class="project-img" onerror="this.onerror=null; this.src='assets/projects/warehouse-amr.svg';">
+            </div>
+            <div class="project-card-body">
+              <div>
+                <h3 class="project-card-title">Autonomous Mobile Robot (AMR) for Warehouse</h3>
+                <div class="project-card-cat">Robotics • Navigation • ROS</div>
+              </div>
+              <div class="project-card-footer">
+                <button type="button" class="btn-case-study view-case-study-btn" data-project="project6">
+                  <span>View Case Study</span>
+                  <span class="btn-arrow">→</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TECHNOLOGIES I WORK WITH STRIP -->
+  <div class="tech-strip fade-in">
+    <div class="container">
+      <div class="tech-strip-header">
+        <span style="color:#FF3B30;">•</span> Technologies I Work With
+      </div>
+      <div class="tech-strip-pills">
+        <div class="tech-pill-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 15fM12 9v6M9 12h6"/></svg>
+          STM32
+        </div>
+        <div class="tech-pill-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+          ESP32
+        </div>
+        <div class="tech-pill-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>
+          ROS
+        </div>
+        <div class="tech-pill-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Python
+        </div>
+        <div class="tech-pill-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          C / C++
+        </div>
+        <div class="tech-pill-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          OpenCV
+        </div>
+        <div class="tech-pill-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          TensorFlow
+        </div>
+        <div class="tech-pill-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          Fusion 360
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS MATRIX SECTION -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-label">TECHNICAL COMPETENCIES</div>
+      <h2 class="section-title fade-in">My Engineering Toolbox</h2>
+
+      <div class="skills-grid fade-in" style="margin-top: 32px;">
+        
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div class="skill-category-title">BIOMEDICAL ENGINEERING</div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-badge">EMG Sensors</span>
+            <span class="skill-badge">Prosthetics</span>
+            <span class="skill-badge">Biomedical Instrumentation</span>
+            <span class="skill-badge">Medical Devices</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M7 7l10 10M7 17L17 7"/></svg>
+            </div>
+            <div class="skill-category-title">EMBEDDED SYSTEMS</div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-badge">STM32</span>
+            <span class="skill-badge">ESP32</span>
+            <span class="skill-badge">Raspberry Pi</span>
+            <span class="skill-badge">Embedded C</span>
+            <span class="skill-badge">UART / SPI / I2C</span>
+            <span class="skill-badge">GPIO Control</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 15fM12 9v6M9 12h6"/></svg>
+            </div>
+            <div class="skill-category-title">ROBOTICS</div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-badge">ROS</span>
+            <span class="skill-badge">LiDAR &amp; SLAM</span>
+            <span class="skill-badge">Motor Control</span>
+            <span class="skill-badge">Actuators</span>
+            <span class="skill-badge">Sensors &amp; Encoders</span>
+            <span class="skill-badge">Robotics</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div class="skill-category-title">PROGRAMMING</div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-badge">C Language</span>
+            <span class="skill-badge">C / C++</span>
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">NumPy &amp; SciPy</span>
+            <span class="skill-badge">Jupyter</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <div class="skill-category-title">AI / COMPUTER VISION</div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-badge">YOLO</span>
+            <span class="skill-badge">TFLite</span>
+            <span class="skill-badge">OpenCV</span>
+            <span class="skill-badge">TensorFlow</span>
+            <span class="skill-badge">Image Classification</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <div class="skill-category-title">PRODUCT DESIGN</div>
+          </div>
+          <div class="skill-tags">
+          <span class="skill-badge">CAD Modeling</span>
+            <span class="skill-badge">Fusion 360</span>
+            <span class="skill-badge">3D Printing</span>
+            <span class="skill-badge">Prototyping</span>
+            <span class="skill-badge">Hardware Integration</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE & EDUCATION SECTION -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-label">ACADEMIC &amp; TIMELINE</div>
+      <h2 class="section-title fade-in">Education &amp; Industrial Experience</h2>
+
+      <!-- CAREER OBJECTIVE & MISSION CARD -->
+      <div class="career-objective-card fade-in">
+        <div class="career-obj-header">
+          <div class="career-obj-badge">
+            <span class="status-dot-pulse"></span>
+            CAREER OBJECTIVE &amp; VISION
+          </div>
+          <div class="mono-tag" style="color: var(--accent-red); font-size: 0.76rem;">R&amp;D • MEDICAL DEVICES • PRODUCT DEVELOPMENT</div>
+        </div>
+        <p class="career-obj-text">
+          My goal is to pursue a career in <strong style="color: #fff;">R&amp;D and medical device development</strong>, combining biomedical engineering with <strong style="color: #fff;">robotics</strong>, <strong style="color: #fff;">embedded systems</strong>, <strong style="color: #fff;">AI</strong>, and <strong style="color: #fff;">product development</strong> to turn innovative ideas into reliable real-world solutions.
+        </p>
+      </div>
+
+      <div class="timeline-list fade-in" style="margin-top: 36px;">
+        <!-- FUNDED PRODUCT DEVELOPMENT: SNS MANAGEMENT -->
+        <div class="timeline-item">
+          <div class="mono-tag" style="margin-bottom: 6px;">FUNDED PROJECT • INSTITUTIONAL GRANT (₹3,00,000)</div>
+          <h3 class="edu-degree">Funded Product Development — SNS Management</h3>
+          <div class="achievement-award" style="margin-top: 4px; color: var(--accent-red);">SNS College of Technology | Product Development</div>
+          <p style="color: var(--text-secondary); margin-top: 10px; font-size: 0.92rem; line-height: 1.6;">
+            Received <strong style="color: #fff;">₹3,00,000</strong> in institutional funding from SNS Management for product development and contributed technically to the project from concept development through prototyping and testing. Worked on engineering design, electronics integration, system development, troubleshooting, and iterative improvements to develop the product toward a functional prototype.
+          </p>
+        </div>
+
+        <!-- INDUSTRIAL INTERNSHIP: MEDSBY HEALTHCARE -->
+        <div class="timeline-item">
+          <div class="mono-tag" style="margin-bottom: 6px;">INDUSTRIAL INTERNSHIP • 2024</div>
+          <h3 class="edu-degree">Internship &amp; Industrial Training Programme</h3>
+          <div class="achievement-award" style="margin-top: 4px; color: var(--accent-red);">Medsby Healthcare &amp; Engineering Solutions</div>
+          <p style="color: var(--text-secondary); margin-top: 10px; font-size: 0.92rem;">
+            Successfully completed 14 days of intensive industrial training (30/07/2024 to 14/08/2024) in biomedical engineering solutions, medical device maintenance, and healthcare instrumentation.
+          </p>
+          <div style="margin-top: 14px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+            <div class="view-proof-btn" data-proof-src="assets/experience/medsby-intern-group.jpg" data-proof-title="Medsby Healthcare &amp; Engineering Solutions — Internship Ceremony Group Photograph" style="cursor: pointer; display: inline-flex; align-items: center; gap: 6px; color: var(--accent-red); font-family: var(--font-mono); font-size: 0.82rem; font-weight: 600;">
+              📷 View Intern Group Photo ↗
+            </div>
+            <div class="view-proof-btn" data-proof-src="assets/experience/medsby-internship.jpg" data-proof-title="Medsby Healthcare &amp; Engineering Solutions — Official Internship Certificate (Rohith R)" style="cursor: pointer; display: inline-flex; align-items: center; gap: 6px; color: var(--text-secondary); font-family: var(--font-mono); font-size: 0.82rem; font-weight: 600;">
+              📄 View Certificate ↗
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="mono-tag" style="margin-bottom: 6px;">DEGREE PROGRAM &amp; INSTITUTIONAL REPRESENTATION</div>
+          <h3 class="edu-degree">Bachelor of Engineering — Biomedical Engineering</h3>
+          <div class="achievement-award" style="margin-top: 4px; color: var(--accent-red);">SNS College of Technology</div>
+          <p style="color: var(--text-secondary); margin-top: 10px; font-size: 0.95rem; line-height: 1.6;">
+            Focusing on biomedical instrumentation, embedded systems, microcontrollers, control theory, and medical device design. Proudly represented <strong style="color: #fff;">SNS College of Technology</strong> in national-level technical competitions and the 24-hour national SDG Hackathon (Central India Hackathon 3.0), contributing directly to entering our institution's name into the <strong style="color: #fff;">India Book of Records</strong> among 39 prestigious engineering colleges nationwide.
+          </p>
+        </div>
+      </div>
+
+      <div class="resume-box fade-in" id="resume">
+        <h3>Want the complete picture?</h3>
+        <p>View or download my resume for a detailed overview of my engineering projects, skills, and academic background.</p>
+        <a href="https://drive.google.com/file/d/18oYhSnm9JcxaPO5CURGQ5dVQGc7MZzdj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          View Resume (Google Drive) ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS SECTION -->
+  <section class="section" id="achievements">
+    <div class="container">
+      <div class="section-label">NATIONAL RECOGNITION &amp; PROOFS</div>
+      <h2 class="section-title fade-in">National Hackathon Wins &amp; Events Victory</h2>
+
+      <div class="achievements-grid fade-in" style="margin-top: 32px;">
+        
+        <!-- ACHIEVEMENT 1: INDIA BOOK OF RECORDS - CENTRAL INDIA HACKATHON 3.0 -->
+        <div class="achievement-card">
+          <div class="achievement-proof-thumb view-proof-btn" data-proof-src="assets/achievements/india-book-of-records-sdg.jpg" data-proof-title="India Book of Records — Central India Hackathon 3.0 Official Record Certificate (Rohith R / SNS College of Technology)" style="cursor: pointer;">
+            <img 
+              src="assets/achievements/india-book-of-records-sdg.jpg" 
+              alt="India Book of Records Official Record Certificate — Central India Hackathon 3.0" 
+              class="achievement-proof-img"
+              style="object-fit: contain;"
+              onerror="this.onerror=null; this.src='assets/achievements/sih2024.svg';"
+            >
+          </div>
+          <div class="achievement-details">
+            <div>
+              <div class="achievement-header-row">
+                <div class="trophy-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                </div>
+                <div>
+                  <h3 class="achievement-title">India Book of Records — Central India Hackathon 3.0</h3>
+                  <div class="achievement-award">National Record Setter • Represented SNS College of Technology</div>
+                </div>
+              </div>
+              <p class="achievement-desc">
+                Represented <strong>SNS College of Technology</strong> in the 24-hour national-level SDG initiative — <em>Central India Hackathon 3.0</em> (Nagpur). Selected among the top 100 shortlisted teams from 800 registered teams across 39 prestigious engineering institutes and 9 states, contributing to setting the official <strong>India Book of Records</strong> for Maximum Participation in an Offline SDG-Focused Hackathon (UN SDG 3: Good Health &amp; Well-Being &amp; SDG 9: Industry, Innovation &amp; Infrastructure).
+              </p>
+            </div>
+            <div class="achievement-tags-row">
+              <span class="achievement-team-tag">🇮🇳 India Book of Records</span>
+              <span class="achievement-team-tag">🏛️ SNS College of Technology</span>
+              <span class="achievement-team-tag">🌱 UN SDG 3 &amp; SDG 9</span>
+              <span class="achievement-team-tag">🏆 100 Finalists (800 Teams)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACHIEVEMENT 2: SMART INDIA HACKATHON 2024 -->
+        <div class="achievement-card">
+          <div class="achievement-proof-thumb view-proof-btn" data-proof-src="assets/achievements/sih2024-certificate.jpg" data-proof-title="Smart India Hackathon 2024 — Official Winner Certificate (Rohith R)" style="cursor: pointer;">
+            <img 
+              src="assets/achievements/sih2024-certificate.jpg" 
+              alt="Smart India Hackathon 2024 Winner Certificate — Rohith R" 
+              class="achievement-proof-img"
+              style="object-fit: contain;"
+              onerror="if(!this.triedPng){this.triedPng=true;this.src='assets/achievements/sih2024.jpg';}else{this.onerror=null;this.src='assets/achievements/sih2024.svg';}"
+            >
+          </div>
+          <div class="achievement-details">
+            <div>
+              <div class="achievement-header-row">
+                <div class="trophy-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17M14 14.66V17M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+                </div>
+                <div>
+                  <h3 class="achievement-title">Smart India Hackathon 2024</h3>
+                  <div class="achievement-award">Grand Finale 1st Prize Winner • Ministry of Social Justice</div>
+                </div>
+              </div>
+              <p class="achievement-desc">
+                First prize winner in the national level hackathon organized under the Ministry of Social Justice and Empowerment for assistive hardware innovation (Myoelectric Prosthetic Bionic Hand) with Team Black 2.0.
+              </p>
+              <div style="margin-top: 10px; display: flex; gap: 14px; flex-wrap: wrap;">
+                <div class="view-proof-btn" data-proof-src="assets/achievements/sih2024-moment.jpg" data-proof-title="Smart India Hackathon 2024 — Day 2 Hardware Prototyping Workstation (Team Black 2.0)" style="cursor: pointer; font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 600;">
+                  📷 View Hackathon Workstation Photo ↗
+                </div>
+              </div>
+            </div>
+            <div class="achievement-tags-row">
+              <span class="achievement-team-tag">🏆 National Winner</span>
+              <span class="achievement-team-tag">Team Black 2.0</span>
+              <span class="achievement-team-tag">Assistive Tech</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACHIEVEMENT 3: HACK 1.0 FUSION -->
+        <div class="achievement-card">
+          <div class="achievement-proof-thumb view-proof-btn" data-proof-src="assets/achievements/hack1-fusion-certificate.jpg" data-proof-title="Hack 1.0 Fusion — Official First Prize Winner Certificate (Rohith R)" style="cursor: pointer;">
+            <img 
+              src="assets/achievements/hack1-fusion-certificate.jpg" 
+              alt="Hack 1.0 Fusion First Prize Winner Certificate — Rohith R" 
+              class="achievement-proof-img"
+              style="object-fit: contain; width: 100%; height: 100%;"
+              onerror="this.onerror=null; this.src='assets/achievements/hack1-fusion-stage.jpg';"
+            >
+          </div>
+          <div class="achievement-details">
+            <div>
+              <div class="achievement-header-row">
+                <div class="trophy-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17M14 14.66V17M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+                </div>
+                <div>
+                  <h3 class="achievement-title">Hack 1.0 Fusion</h3>
+                  <div class="achievement-award">First Place Winner • Jeppiaar Institute</div>
+                </div>
+              </div>
+              <p class="achievement-desc">
+                First place winner at the 24-hour intense hardware and embedded prototyping hackathon with Team Black 2.0 at Jeppiaar Institute of Technology.
+              </p>
+            </div>
+            <div class="achievement-tags-row">
+              <span class="achievement-team-tag">🏆 1st Place Winner</span>
+              <span class="achievement-team-tag">Team Black 2.0</span>
+              <span class="achievement-team-tag">₹12,000 Cash Prize</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACHIEVEMENT 4: FOUNDERPASSION & NIAGARA INDUSTRIAL HACKATHON -->
+        <div class="achievement-card">
+          <div class="achievement-proof-thumb view-proof-btn" data-proof-src="assets/achievements/industrial-hackathon.jpg" data-proof-title="Founderpassion &amp; Niagara Industrial Hackathon — Best Hardware Team (Team Black 2.0)" style="cursor: pointer;">
+            <img 
+              src="assets/achievements/industrial-hackathon.jpg" 
+              alt="Founderpassion &amp; Niagara Industrial Hackathon Certificate of Excellence — Best Hardware Team" 
+              class="achievement-proof-img"
+              style="object-fit: cover;"
+              onerror="if(!this.triedPng){this.triedPng=true;this.src='assets/achievements/industrial-hackathon.png';}else{this.onerror=null;this.src='assets/achievements/industrial-hackathon.svg';}"
+            >
+          </div>
+          <div class="achievement-details">
+            <div>
+              <div class="achievement-header-row">
+                <div class="trophy-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17M14 14.66V17M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+                </div>
+                <div>
+                  <h3 class="achievement-title">Founderpassion &amp; Niagara Industrial Hackathon</h3>
+                  <div class="achievement-award">Best Hardware Team</div>
+                </div>
+              </div>
+              <p class="achievement-desc">
+                Awarded Certificate of Excellence for Best Hardware Team with Team Black 2.0 at the Industrial Hackathon organized by Founderpassion Foundation in collaboration with Niagara Automation held at Makershub.
+              </p>
+            </div>
+            <div class="achievement-tags-row">
+              <span class="achievement-team-tag">🏆 Team Black 2.0</span>
+              <span class="achievement-team-tag">Best Hardware</span>
+              <span class="achievement-team-tag">Founderpassion</span>
+              <span class="achievement-team-tag">Niagara Automation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACHIEVEMENT 5: K.J. SOMAIYA AGRI-TECH HACKATHON 2026 -->
+        <div class="achievement-card">
+          <div class="achievement-proof-thumb view-proof-btn" data-proof-src="assets/achievements/somaiya-agritech-certificate.jpg" data-proof-title="Agri-Tech Hackathon 2026 — Certificate of Excellence for Best Hardware Team (K.J. Somaiya School of Engineering / Somaiya Vidyavihar University)" style="cursor: pointer;">
+            <img 
+              src="assets/achievements/somaiya-agritech-certificate.jpg" 
+              alt="K.J. Somaiya Agri-Tech Hackathon 2026 Certificate of Excellence — Best Hardware Team (Team Black 2.0)" 
+              class="achievement-proof-img"
+              style="object-fit: contain; width: 100%; height: 100%;"
+              onerror="if(!this.triedPng){this.triedPng=true;this.src='assets/achievements/somaiya-agritech-certificate.png';}else{this.onerror=null;this.src='assets/achievements/agritech2026-milestone.jpg';}"
+            >
+          </div>
+          <div class="achievement-details">
+            <div>
+              <div class="achievement-header-row">
+                <div class="trophy-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17M14 14.66V17M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+                </div>
+                <div>
+                  <h3 class="achievement-title">K.J. Somaiya Agri-Tech Hackathon 2026</h3>
+                  <div class="achievement-award">Best Hardware Team • Somaiya Vidyavihar University</div>
+                </div>
+              </div>
+              <p class="achievement-desc">
+                Awarded Certificate of Excellence for achieving the title of <strong>Best Hardware Team</strong> with Team Black 2.0 at Agri-Tech Hackathon 2026 organized by the Department of Electronics Engineering, K.J. Somaiya School of Engineering, Somaiya Vidyavihar University.
+              </p>
+            </div>
+            <div class="achievement-tags-row">
+              <span class="achievement-team-tag">🏆 Best Hardware Team</span>
+              <span class="achievement-team-tag">Team Black 2.0</span>
+              <span class="achievement-team-tag">K.J. Somaiya</span>
+              <span class="achievement-team-tag">Somaiya Vidyavihar</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACHIEVEMENT 6: INFO HACKATHON / TRISQUADATHON 2025 (OVERALL INNOVATION 1ST PRIZE) -->
+        <div class="achievement-card">
+          <div class="achievement-proof-thumb view-proof-btn" data-proof-src="assets/achievements/trisquadathon-2025.jpg" data-proof-title="TRISQUADATHON Hackathon 2025 — Official Unstop Certificate of Participation (Rohith Ramesh / Team Black 2.0)" style="cursor: pointer;">
+            <img 
+              src="assets/achievements/trisquadathon-2025.jpg" 
+              alt="TRISQUADATHON Hackathon 2025 Certificate of Participation — Rohith Ramesh" 
+              class="achievement-proof-img"
+              style="object-fit: contain;"
+              onerror="this.onerror=null; this.src='assets/achievements/sih2024.svg';"
+            >
+          </div>
+          <div class="achievement-details">
+            <div>
+              <div class="achievement-header-row">
+                <div class="trophy-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17M14 14.66V17M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+                </div>
+                <div>
+                  <h3 class="achievement-title">INFO Hackathon (TRISQUADATHON '25)</h3>
+                  <div class="achievement-award">Overall Innovation 1st Prize Winner</div>
+                </div>
+              </div>
+              <p class="achievement-desc">
+                Awarded Overall Innovation First Prize &amp; Winner Trophy at TRISQUADATHON Hackathon 2025 (INFO Institute of Engineering &amp; Unstop) for the AgroX Smart Agricultural Spraying Rover with Team Black 2.0.
+              </p>
+            </div>
+            <div class="achievement-tags-row">
+              <span class="achievement-team-tag">🏆 1st Prize Innovation</span>
+              <span class="achievement-team-tag">Team Black 2.0</span>
+              <span class="achievement-team-tag">Winner Trophy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACHIEVEMENT 6: PROJECT EXPO '25 -->
+        <div class="achievement-card">
+          <div class="achievement-proof-thumb view-proof-btn" data-proof-src="assets/achievements/project-expo-2025.jpg" data-proof-title="Project Expo '25 — 1st Prize Winner (Development of Cost-Effective Myoelectric Prosthesis)" style="cursor: pointer;">
+            <img 
+              src="assets/achievements/project-expo-2025.jpg" 
+              alt="Project Expo '25 First Prize Certificate — Rohith R" 
+              class="achievement-proof-img"
+              style="object-fit: contain;"
+              onerror="this.onerror=null; this.src='assets/achievements/sih2024.svg';"
+            >
+          </div>
+          <div class="achievement-details">
+            <div>
+              <div class="achievement-header-row">
+                <div class="trophy-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17M14 14.66V17M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+                </div>
+                <div>
+                  <h3 class="achievement-title">Project Expo '25</h3>
+                  <div class="achievement-award">1st Prize Winner</div>
+                </div>
+              </div>
+              <p class="achievement-desc">
+                Awarded First Prize at Project Expo '25 (SNS College of Technology) for Development of Cost-Effective Myoelectric Prosthesis.
+              </p>
+            </div>
+            <div class="achievement-tags-row">
+              <span class="achievement-team-tag">🏆 1st Prize</span>
+              <span class="achievement-team-tag">Myoelectric Prosthesis</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACHIEVEMENT 7: MINI-HACKATHON & OVERALL CHAMPIONSHIP (KITEODYSSEY 3.0) -->
+        <div class="achievement-card">
+          <div class="achievement-proof-thumb view-proof-btn" data-proof-src="assets/achievements/mini-hackathon-2026.jpg" data-proof-title="Mini-Hackathon — 2nd Place &amp; Overall Champion Certificate (KITEODYSSEY 3.0)" style="cursor: pointer;">
+            <img 
+              src="assets/achievements/mini-hackathon-2026.jpg" 
+              alt="Mini-Hackathon 2nd Place Certificate — Rohith R" 
+              class="achievement-proof-img"
+              style="object-fit: contain;"
+              onerror="this.onerror=null; this.src='assets/achievements/sih2024.svg';"
+            >
+          </div>
+          <div class="achievement-details">
+            <div>
+              <div class="achievement-header-row">
+                <div class="trophy-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17M14 14.66V17M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+                </div>
+                <div>
+                  <h3 class="achievement-title">Mini-Hackathon &amp; Overall Champion</h3>
+                  <div class="achievement-award">Overall Champion &amp; 2nd Place</div>
+                </div>
+              </div>
+              <p class="achievement-desc">
+                Crowned Overall Champion and secured 2nd Place at Mini-Hackathon (KITEODYSSEY 3.0, KGiSL Institute of Technology) winning 6 event trophies.
+              </p>
+            </div>
+            <div class="achievement-tags-row">
+              <span class="achievement-team-tag">🏆 Overall Champion</span>
+              <span class="achievement-team-tag">🥈 2nd Place Mini-Hackathon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACHIEVEMENT 8: NATIONAL CONFERENCE PAPER PRESENTATION (NCRTEB-2023) -->
+        <div class="achievement-card">
+          <div class="achievement-proof-thumb view-proof-btn" data-proof-src="assets/achievements/paper-presentation-2023.jpg" data-proof-title="NCRTEB-2023 — Paper Presentation Certificate (R. Rohith)" style="cursor: pointer;">
+            <img 
+              src="assets/achievements/paper-presentation-2023.jpg" 
+              alt="NCRTEB-2023 National Conference Paper Presentation Certificate — R. Rohith" 
+              class="achievement-proof-img"
+              style="object-fit: contain;"
+              onerror="this.onerror=null; this.src='assets/achievements/sih2024.svg';"
+            >
+          </div>
+          <div class="achievement-details">
+            <div>
+              <div class="achievement-header-row">
+                <div class="trophy-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <div>
+                  <h3 class="achievement-title">National Conference Paper Presentation</h3>
+                  <div class="achievement-award">NCRTEB-2023 • Certificate of Appreciation</div>
+                </div>
+              </div>
+              <p class="achievement-desc">
+                Presented research paper titled "Urinary Bladder Volume Measurement &amp; Triggering System Using Design Thinking" at National Conference on Recent Trends in Electronics, Electrical and Bio-Signal Processing Technology.
+              </p>
+            </div>
+            <div class="achievement-tags-row">
+              <span class="achievement-team-tag">📄 Paper Presentation</span>
+              <span class="achievement-team-tag">Design Thinking</span>
+              <span class="achievement-team-tag">Bio-Signal Processing</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MOMENTS & MILESTONES PHOTO GALLERY -->
+      <div class="milestones-section fade-in">
+        <h3 class="milestones-title">
+          <span style="color:#FF3B30;">•</span> Moments &amp; Milestones
+        </h3>
+        <div class="milestones-gallery-grid">
+          
+          <!-- 1. INDIA BOOK OF RECORDS - CENTRAL INDIA HACKATHON 3.0 -->
+          <div class="milestone-item view-proof-btn" data-proof-src="assets/achievements/india-book-of-records-sdg.jpg" data-proof-title="India Book of Records — Central India Hackathon 3.0 Official Certificate (Maximum Participation in Offline SDG Hackathon)">
+            <div class="milestone-img-box">
+              <img src="assets/achievements/india-book-of-records-sdg.jpg" alt="India Book of Records Official Record Certificate — Central India Hackathon 3.0" class="milestone-img" style="object-position: center top;" onerror="this.onerror=null; this.src='assets/achievements/sih2024.svg';">
+            </div>
+            <div class="milestone-info">
+              <div class="milestone-cap-tag">🇮🇳 India Book of Records</div>
+              <h4 class="milestone-cap-title">National Record — SDG Hackathon</h4>
+              <p class="milestone-cap-desc">Represented SNS College of Technology at Central India Hackathon Chapter 3.0 (Nagpur), entering the India Book of Records for maximum offline SDG hackathon participation.</p>
+              <div class="milestone-view-link">View Full Certificate ↗</div>
+            </div>
+          </div>
+
+          <!-- 2. MEDSBY HEALTHCARE INDUSTRIAL INTERNSHIP -->
+          <div class="milestone-item view-proof-btn" data-proof-src="assets/experience/medsby-intern-group.jpg" data-proof-title="Medsby Healthcare &amp; Engineering Solutions — Internship &amp; Industrial Training Programme Completion">
+            <div class="milestone-img-box">
+              <img src="assets/experience/medsby-intern-group.jpg" alt="Medsby Healthcare &amp; Engineering Solutions Internship Completion Ceremony" class="milestone-img" style="object-position: center 20%;" onerror="this.onerror=null; this.src='assets/experience/medsby-internship.jpg';">
+            </div>
+            <div class="milestone-info">
+              <div class="milestone-cap-tag">🏥 Industrial Internship</div>
+              <h4 class="milestone-cap-title">Medsby Healthcare Internship</h4>
+              <p class="milestone-cap-desc">Internship &amp; Industrial Training Programme completion ceremony at Medsby Healthcare &amp; Engineering Solutions for biomedical engineering and healthcare systems.</p>
+              <div class="milestone-view-link">View Full Photo ↗</div>
+            </div>
+          </div>
+
+          <!-- 3. DESIGN THINKING MENTORSHIP -->
+          <div class="milestone-item view-proof-btn" data-proof-src="assets/achievements/design-thinking-mentorship.jpg" data-proof-title="Design Thinking Mentorship — Educating Younger Generation &amp; Mentoring 1st Prize Winners at Keartiman MHSS">
+            <div class="milestone-img-box">
+              <img src="assets/achievements/design-thinking-mentorship.jpg" alt="Design Thinking Mentorship at Keartiman Matriculation Higher Secondary School" class="milestone-img" onerror="this.onerror=null; this.src='assets/achievements/sih2024.svg';">
+            </div>
+            <div class="milestone-info">
+              <div class="milestone-cap-tag">🏆 1st Prize Mentorship</div>
+              <h4 class="milestone-cap-title">Design Thinking Mentorship</h4>
+              <p class="milestone-cap-desc">Educated school students at Keartiman MHSS on design thinking principles and mentored them to win 1st prize in the design contest.</p>
+              <div class="milestone-view-link">View Full Photo ↗</div>
+            </div>
+          </div>
+
+          <!-- 4. INFO HACKATHON OVERALL INNOVATION -->
+          <div class="milestone-item view-proof-btn" data-proof-src="assets/achievements/info-hackathon-first-prize.jpg" data-proof-title="INFO Hackathon (TRISQUADATHON '25) — Overall Innovation First Prize Award Ceremony (Team Black 2.0)">
+            <div class="milestone-img-box">
+              <img src="assets/achievements/info-hackathon-first-prize.jpg" alt="INFO Institute Hackathon Overall Innovation First Prize Award Ceremony" class="milestone-img" onerror="this.onerror=null; this.src='assets/achievements/sih2024.svg';">
+            </div>
+            <div class="milestone-info">
+              <div class="milestone-cap-tag">🏆 Overall Innovation 1st Prize</div>
+              <h4 class="milestone-cap-title">INFO Hackathon '25</h4>
+              <p class="milestone-cap-desc">Team Black 2.0 on stage receiving the Winner Trophy &amp; cash prize for the AgroX autonomous spraying rover.</p>
+              <div class="milestone-view-link">View Full Photo ↗</div>
+            </div>
+          </div>
+
+          <!-- 5. NCRTEB-2023 PAPER PRESENTATION -->
+          <div class="milestone-item view-proof-btn" data-proof-src="assets/achievements/paper-presentation-stage.jpg" data-proof-title="NCRTEB-2023 National Conference — Paper Presentation Award Ceremony (KIT-Kalaignarkarunanidhi Institute)">
+            <div class="milestone-img-box">
+              <img src="assets/achievements/paper-presentation-stage.jpg" alt="NCRTEB-2023 National Conference Paper Presentation Award Ceremony" class="milestone-img" onerror="this.onerror=null; this.src='assets/achievements/paper-presentation-2023.jpg';">
+            </div>
+            <div class="milestone-info">
+              <div class="milestone-cap-tag">📄 Research Paper Presentation</div>
+              <h4 class="milestone-cap-title">NCRTEB-2023 Conference</h4>
+              <p class="milestone-cap-desc">Awarded on stage at KIT for biomedical research on non-invasive bladder volume triggering systems.</p>
+              <div class="milestone-view-link">View Full Photo ↗</div>
+            </div>
+          </div>
+          
+          <!-- 6. SNS INSTITUTION FELICITATION -->
+          <div class="milestone-item view-proof-btn" data-proof-src="assets/achievements/sns-felicitation.jpg" data-proof-title="SNS College of Technology — Management Felicitation for Multiple Hackathon Victories">
+            <div class="milestone-img-box">
+              <img src="assets/achievements/sns-felicitation.jpg" alt="SNS Institution Management Felicitation for Multiple Hackathon Wins" class="milestone-img" onerror="this.onerror=null; this.src='assets/achievements/sih2024-award.jpg';">
+            </div>
+            <div class="milestone-info">
+              <div class="milestone-cap-tag">🎖️ Institutional Honor</div>
+              <h4 class="milestone-cap-title">SNS Management Felicitation</h4>
+              <p class="milestone-cap-desc">Honored by college management and leadership for consistent victories across national hackathons.</p>
+              <div class="milestone-view-link">View Full Photo ↗</div>
+            </div>
+          </div>
+
+          <!-- 7. KITEODYSSEY 3.0 OVERALL CHAMPION -->
+          <div class="milestone-item view-proof-btn" data-proof-src="assets/achievements/mini-hackathon-milestone.jpg" data-proof-title="KiTEODYSSEY 3.0 — Overall Champion Victory &amp; Trophies (Rohith R)">
+            <div class="milestone-img-box">
+              <img src="assets/achievements/mini-hackathon-milestone.jpg" alt="KiTEODYSSEY 3.0 Overall Champion Victory" class="milestone-img" style="object-position: center top;" onerror="this.onerror=null; this.src='assets/achievements/mini-hackathon-2026.jpg';">
+            </div>
+            <div class="milestone-info">
+              <div class="milestone-cap-tag">🏆 Overall Champion &amp; 6 Trophies</div>
+              <h4 class="milestone-cap-title">KiTEODYSSEY 3.0</h4>
+              <p class="milestone-cap-desc">Crowned overall champion at KGiSL after securing 2nd place in the mini-hackathon and winning 6 event trophies.</p>
+              <div class="milestone-view-link">View Full Photo ↗</div>
+            </div>
+          </div>
+
+          <!-- 8. PROJECT EXPO '25 1ST PRIZE -->
+          <div class="milestone-item view-proof-btn" data-proof-src="assets/achievements/project-expo-2025-milestone.jpg" data-proof-title="Project Expo '25 — 1st Prize Award Ceremony (SNS College of Technology)">
+            <div class="milestone-img-box">
+              <img src="assets/achievements/project-expo-2025-milestone.jpg" alt="Project Expo '25 1st Prize Award Ceremony" class="milestone-img" onerror="this.onerror=null; this.src='assets/achievements/project-expo-2025.jpg';">
+            </div>
+            <div class="milestone-info">
+              <div class="milestone-cap-tag">🏆 1st Prize Winner</div>
+              <h4 class="milestone-cap-title">Project Expo '25 Ceremony</h4>
+              <p class="milestone-cap-desc">1st Prize award ceremony for the development of Cost-Effective 3D-Printed Myoelectric Prosthesis.</p>
+              <div class="milestone-view-link">View Full Photo ↗</div>
+            </div>
+          </div>
+
+          <!-- 9. BIONIC HAND TEST BENCH -->
+          <div class="milestone-item view-proof-btn" data-proof-src="assets/projects/bionic-hand-dev.jpg" data-proof-title="Myoelectric Prosthetic Hand — Hardware Prototype &amp; sEMG Testing Bench">
+            <div class="milestone-img-box">
+              <img src="assets/projects/bionic-hand-dev.jpg" alt="Myoelectric Bionic Hand Real Hardware Test Bench &amp; EMG Calibration" class="milestone-img" style="object-position: center 30%;" onerror="this.onerror=null; this.src='assets/projects/bionic-hand.jpg';">
+            </div>
+            <div class="milestone-info">
+              <div class="milestone-cap-tag">🦾 R&amp;D Prototyping</div>
+              <h4 class="milestone-cap-title">Bionic Hand Test Bench</h4>
+              <p class="milestone-cap-desc">Live sEMG electrode calibration, firmware tuning, and mechanical tendon testing for the 5-digit myoelectric prosthesis prototype.</p>
+              <div class="milestone-view-link">View Full Photo ↗</div>
+            </div>
+          </div>
+
+          <!-- 9B. MYOELECTRIC PROSTHETIC ARM 3D PRINTING & PROTOTYPING VIDEO -->
+          <div class="milestone-item view-proof-btn" data-proof-src="assets/projects/bionic-hand-journey.mp4" data-proof-title="Myoelectric Prosthetic Arm — 3D Printing &amp; Fabrication Demonstration Video">
+            <div class="milestone-img-box" style="position: relative;">
+              <span class="flagship-tag" style="background: rgba(18, 13, 13, 0.9); border: 1px solid rgba(255, 59, 48, 0.6); color: #fff; top: 8px; right: 8px; left: auto; font-size: 0.68rem; padding: 3px 8px; position: absolute; z-index: 2;">▶ PLAY VIDEO</span>
+              <img src="assets/projects/bionic-hand-ball-grasp.jpg" alt="Myoelectric Prosthetic Arm 3D Printing &amp; Prototyping Video" class="milestone-img" style="object-fit: cover; object-position: center;" onerror="this.onerror=null; this.src='assets/projects/bionic-hand-dev.jpg';">
+            </div>
+            <div class="milestone-info">
+              <div class="milestone-cap-tag">🎥 Hardware Video Demo</div>
+              <h4 class="milestone-cap-title">Prosthetic Arm 3D Print Video</h4>
+              <p class="milestone-cap-desc">Live 3D-printing fabrication and mechanical prototyping build of the custom myoelectric prosthetic arm hardware.</p>
+              <div class="milestone-view-link" style="color: var(--accent-red); font-weight: 600;">Watch Video Demonstration ▶</div>
+            </div>
+          </div>
+
+          <!-- 10. SIH 2024 GRAND FINALE WORKSTATION -->
+          <div class="milestone-item view-proof-btn" data-proof-src="assets/achievements/sih2024-moment.jpg" data-proof-title="Smart India Hackathon 2024 — Day 2 Live Hardware Prototyping &amp; Testing (Team Black 2.0)">
+            <div class="milestone-img-box">
+              <img src="assets/achievements/sih2024-moment.jpg" alt="Smart India Hackathon 2024 Hardware Edition Day 2 Workstation Prototyping Moment" class="milestone-img" style="object-position: center 20%;" onerror="this.onerror=null; this.src='assets/achievements/sih2024-award.jpg';">
+            </div>
+            <div class="milestone-info">
+              <div class="milestone-cap-tag">⚡ SIH '24 Grand Finale</div>
+              <h4 class="milestone-cap-title">SIH '24 Prototyping Moment</h4>
+              <p class="milestone-cap-desc">Team Black 2.0 debugging and tuning the myoelectric bionic prosthetic hand at the Smart India Hackathon 2024 Hardware Grand Finale workstation.</p>
+              <div class="milestone-view-link">View Full Photo ↗</div>
+            </div>
+          </div>
+
+          <!-- 11. SIH 2024 GRAND FINALE STAGE -->
+          <div class="milestone-item view-proof-btn" data-proof-src="assets/achievements/sih2024-award.jpg" data-proof-title="Smart India Hackathon 2024 — Grand Finale Stage Ceremony (Team Black 2.0)">
+            <div class="milestone-img-box">
+              <img src="assets/achievements/sih2024-award.jpg" alt="Smart India Hackathon 2024 Stage Ceremony" class="milestone-img" onerror="if(!this.triedPng){this.triedPng=true;this.src='assets/achievements/sih2024.jpg';}else{this.onerror=null;this.src='assets/achievements/sih2024.svg';}">
+            </div>
+            <div class="milestone-info">
+              <div class="milestone-cap-tag">🇮🇳 National Winner</div>
+              <h4 class="milestone-cap-title">Smart India Hackathon '24</h4>
+              <p class="milestone-cap-desc">National Grand Finale stage recognition under Ministry of Social Justice and Empowerment for assistive hardware innovation with Team Black 2.0.</p>
+              <div class="milestone-view-link">View Full Photo ↗</div>
+            </div>
+          </div>
+
+          <!-- 11. HACK 1.0 FUSION -->
+          <div class="milestone-item view-proof-btn" data-proof-src="assets/achievements/hack1-fusion-stage.jpg" data-proof-title="Hack 1.0 Fusion — Winner ₹12,000 Check Ceremony (Team Black 2.0 / Jeppiaar Institute)">
+            <div class="milestone-img-box">
+              <img src="assets/achievements/hack1-fusion-stage.jpg" alt="Hack 1.0 Fusion Winner ₹12,000 Check Award Ceremony" class="milestone-img" onerror="this.onerror=null; this.src='assets/achievements/hack1-fusion.svg';">
+            </div>
+            <div class="milestone-info">
+              <div class="milestone-cap-tag">🏆 1st Place Winner</div>
+              <h4 class="milestone-cap-title">Hack 1.0 Fusion — ₹12K Check</h4>
+              <p class="milestone-cap-desc">Team Black 2.0 on stage receiving the 1st prize ₹12,000 winner check at Jeppiaar Institute of Technology.</p>
+              <div class="milestone-view-link">View Full Photo ↗</div>
+            </div>
+          </div>
+
+          <!-- 11. INDUSTRIAL HACKATHON WINNER -->
+          <div class="milestone-item view-proof-btn" data-proof-src="assets/achievements/industrial-hackathon.jpg" data-proof-title="Founderpassion &amp; Niagara Industrial Hackathon — Award Ceremony (Team Black 2.0)">
+            <div class="milestone-img-box">
+              <img src="assets/achievements/industrial-hackathon.jpg" alt="Founderpassion &amp; Niagara Industrial Hackathon Award Ceremony" class="milestone-img" onerror="this.onerror=null; this.src='assets/achievements/industrial-hackathon.svg';">
+            </div>
+            <div class="milestone-info">
+              <div class="milestone-cap-tag">🏆 Best Hardware Team</div>
+              <h4 class="milestone-cap-title">Founderpassion &amp; Niagara Hackathon</h4>
+              <p class="milestone-cap-desc">Receiving Certificate of Excellence for Best Hardware Team at the Industrial Hackathon organized by Founderpassion Foundation &amp; Niagara Automation at Makershub.</p>
+              <div class="milestone-view-link">View Full Photo ↗</div>
+            </div>
+          </div>
+
+          <!-- 12. K.J. SOMAIYA AGRI-TECH 2026 STAGE CEREMONY -->
+          <div class="milestone-item view-proof-btn" data-proof-src="assets/achievements/agritech2026-milestone.jpg" data-proof-title="K.J. Somaiya Agri-Tech Hackathon 2026 — Grand Finale Stage Award Ceremony (Team Black 2.0)">
+            <div class="milestone-img-box">
+              <img src="assets/achievements/agritech2026-milestone.jpg" alt="K.J. Somaiya Agri-Tech Hackathon 2026 Grand Finale Stage Award Ceremony" class="milestone-img" onerror="this.onerror=null; this.src='assets/achievements/somaiya-agritech-certificate.jpg';">
+            </div>
+            <div class="milestone-info">
+              <div class="milestone-cap-tag">🏆 Best Hardware Team</div>
+              <h4 class="milestone-cap-title">K.J. Somaiya Agri-Tech Finale</h4>
+              <p class="milestone-cap-desc">Team Black 2.0 receiving the Best Hardware Team award on stage at K.J. Somaiya School of Engineering, Somaiya Vidyavihar University.</p>
+              <div class="milestone-view-link">View Full Photo ↗</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS SECTION -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <div class="section-label">CREDENTIALS &amp; TRAINING</div>
+      <h2 class="section-title fade-in">Certifications &amp; Industrial Training</h2>
+      <p class="section-subtitle fade-in" style="color: var(--text-secondary); max-width: 680px; margin-bottom: 32px;">
+        Official industry certifications in surgical robotics, healthcare engineering solutions, and medical device systems.
+      </p>
+
+      <div class="certifications-grid fade-in">
+        <!-- CERTIFICATE 1: JOHNSON & JOHNSON MEDTECH ROBOTICS & CONTROLS -->
+        <div class="achievement-card view-proof-btn" data-proof-src="assets/certifications/jnj-medtech.jpg" data-proof-title="Johnson &amp; Johnson MedTech — Robotics and Controls Job Simulation Certificate" style="cursor: pointer;">
+          <div class="achievement-proof-thumb" style="height: 300px; background: #060404; padding: 12px;">
+            <img 
+              src="assets/certifications/jnj-medtech.jpg" 
+              alt="Johnson &amp; Johnson MedTech Robotics &amp; Controls Certificate" 
+              class="achievement-proof-img"
+              style="object-fit: contain; width: 100%; height: 100%;"
+              onerror="if(!this.triedPng){this.triedPng=true;this.src='assets/certifications/jnj-medtech.png';}else{this.onerror=null;this.src='assets/achievements/sih2024.svg';}"
+            >
+          </div>
+          <div class="achievement-details">
+            <div>
+              <div class="achievement-header-row">
+                <div class="trophy-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M7 7l10 10M7 17L17 7"/></svg>
+                </div>
+                <div>
+                  <h3 class="achievement-title">Robotics &amp; Controls Simulation</h3>
+                  <div class="achievement-award">Johnson &amp; Johnson MedTech • Forage</div>
+                </div>
+              </div>
+              <p class="achievement-desc">
+                Diagnosing &amp; resolving latency delays in surgical robot arms and design optimization for enhanced surgical arm responsiveness.
+              </p>
+            </div>
+            <div class="achievement-tags-row">
+              <span class="achievement-team-tag">🏅 J&amp;J MedTech</span>
+              <span class="achievement-team-tag">Surgical Robotics</span>
+              <span class="achievement-team-tag">Control Optimization</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CERTIFICATE 2: MEDSBY HEALTHCARE INDUSTRIAL INTERNSHIP -->
+        <div class="achievement-card view-proof-btn" data-proof-src="assets/experience/medsby-internship.jpg" data-proof-title="Medsby Healthcare &amp; Engineering Solutions — Internship Certificate (Rohith R)" style="cursor: pointer;">
+          <div class="achievement-proof-thumb" style="height: 300px; background: #060404; padding: 12px;">
+            <img 
+              src="assets/experience/medsby-internship.jpg" 
+              alt="Medsby Healthcare &amp; Engineering Solutions Internship Certificate" 
+              class="achievement-proof-img"
+              style="object-fit: contain; width: 100%; height: 100%;"
+              onerror="this.onerror=null; this.src='assets/achievements/sih2024.svg';"
+            >
+          </div>
+          <div class="achievement-details">
+            <div>
+              <div class="achievement-header-row">
+                <div class="trophy-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <div>
+                  <h3 class="achievement-title">Industrial Internship Programme</h3>
+                  <div class="achievement-award">Medsby Healthcare &amp; Engineering</div>
+                </div>
+              </div>
+              <p class="achievement-desc">
+                14 days intensive industrial training programme (30/07/2024 to 14/08/2024) in biomedical healthcare engineering solutions and clinical devices.
+              </p>
+            </div>
+            <div class="achievement-tags-row">
+              <span class="achievement-team-tag">🏥 Medsby Healthcare</span>
+              <span class="achievement-team-tag">Biomedical Internship</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">ROHITH R</div>
+        <div>Biomedical Engineering · Embedded Systems · Robotics · Product Development</div>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/rohith-rramesh/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/rohithachu089-cmd" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="mailto:rohithachu089@gmail.com">Email</a>
+      </div>
+
+      <div>© 2026 Rohith R</div>
+    </div>
+  </footer>
+
+  <!-- CASE STUDY FULL-SCREEN MODAL -->
+  <div class="modal-backdrop" id="caseStudyModal" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="modalHeaderTitle" style="font-family: var(--font-mono); font-size: 1rem; color: var(--accent-red);">Project Case Study</h3>
+        <button class="modal-close-btn" id="modalClose" aria-label="Close modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Dynamic Case Study Content Loaded via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js?v=212"></script>
+</body>
+</html>

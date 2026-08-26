@@ -1,0 +1,22 @@
+<svg width="600" height="340" viewBox="0 0 600 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Orchard Leaves Background -->
+  <rect width="600" height="340" fill="#142413"/>
+  <path d="M50 40 Q 150 140, 280 60 Q 420 160, 550 40 L 580 300 L 20 300 Z" fill="#1E381C" opacity="0.8"/>
+  <!-- Apple 1 -->
+  <circle cx="210" cy="180" r="50" fill="#CC2222" stroke="#AA1111" stroke-width="3"/>
+  <circle cx="195" cy="165" r="12" fill="#FF5555" opacity="0.6"/>
+  <!-- YOLO Bounding Box 1 -->
+  <rect x="150" y="120" width="120" height="120" fill="none" stroke="#39FF14" stroke-width="3"/>
+  <rect x="150" y="98" width="90" height="20" fill="#39FF14"/>
+  <text x="155" y="112" fill="#000" font-family="monospace" font-size="10" font-weight="bold">APPLE: 98%</text>
+
+  <!-- Apple 2 -->
+  <circle cx="410" cy="170" r="55" fill="#DD3322" stroke="#AA1111" stroke-width="3"/>
+  <circle cx="395" cy="155" r="14" fill="#FF6666" opacity="0.6"/>
+  <!-- YOLO Bounding Box 2 -->
+  <rect x="345" y="105" width="130" height="130" fill="none" stroke="#39FF14" stroke-width="3"/>
+  <rect x="345" y="83" width="90" height="20" fill="#39FF14"/>
+  <text x="350" y="97" fill="#000" font-family="monospace" font-size="10" font-weight="bold">APPLE: 94%</text>
+
+  <text x="30" y="310" fill="#E0E0E0" font-family="sans-serif" font-size="12" font-weight="bold">PLANT DISEASE &amp; FRUIT QUALITY DETECTION</text>
+</svg>

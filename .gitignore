@@ -1,0 +1,7 @@
+# Environment & Temp
+mobile_qr.png
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+.DS_Store

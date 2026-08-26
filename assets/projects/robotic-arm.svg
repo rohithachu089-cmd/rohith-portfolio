@@ -1,0 +1,22 @@
+<svg width="600" height="340" viewBox="0 0 600 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="340" fill="#0B1220"/>
+  <rect x="2" y="2" width="596" height="336" fill="none" stroke="#263449" stroke-width="2"/>
+  <path d="M0 60H600M0 120H600M0 180H600M0 240H600M0 300H600M100 0V340M200 0V340M300 0V340M400 0V340M500 0V340" stroke="#172033" stroke-width="1"/>
+  <!-- Base -->
+  <rect x="140" y="250" width="100" height="24" rx="4" fill="#172033" stroke="#3B82F6" stroke-width="2"/>
+  <circle cx="190" cy="250" r="14" fill="#111827" stroke="#3B82F6" stroke-width="2.5"/>
+  <!-- Link 1 -->
+  <path d="M190 250 L300 150" stroke="#3B82F6" stroke-width="5" stroke-linecap="round"/>
+  <!-- Joint 2 -->
+  <circle cx="300" cy="150" r="12" fill="#111827" stroke="#06B6D4" stroke-width="2.5"/>
+  <!-- Link 2 -->
+  <path d="M300 150 L420 100" stroke="#06B6D4" stroke-width="4" stroke-linecap="round"/>
+  <!-- End Effector Gripper -->
+  <circle cx="420" cy="100" r="8" fill="#3B82F6"/>
+  <!-- Metric HUD Overlay -->
+  <rect x="340" y="190" width="220" height="70" rx="6" fill="#111827" stroke="#263449" stroke-width="1.5"/>
+  <text x="355" y="215" fill="#3B82F6" font-family="monospace" font-size="11" font-weight="bold">rotate_joint: 0.128s</text>
+  <text x="355" y="235" fill="#06B6D4" font-family="monospace" font-size="11" font-weight="bold">move_arm: 0.088s</text>
+  <text x="355" y="250" fill="#94A3B8" font-family="monospace" font-size="10">adjust_grip: 0.050s</text>
+  <text x="300" y="315" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" text-anchor="middle">PROJECT 03: ROBOTIC ARM RESPONSE OPTIMIZATION</text>
+</svg>

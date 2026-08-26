@@ -1,0 +1,16 @@
+<svg width="600" height="340" viewBox="0 0 600 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="340" fill="#0A101D"/>
+  <path d="M0 60H600M0 120H600M0 180H600M0 240H600M0 300H600M100 0V340M200 0V340M300 0V340M400 0V340M500 0V340" stroke="#141E30" stroke-width="1"/>
+  <!-- Peristaltic Pump Enclosure -->
+  <rect x="200" y="80" width="200" height="180" rx="12" fill="#152033" stroke="#FF3B30" stroke-width="2.5"/>
+  <circle cx="300" cy="170" r="65" fill="#0E1624" stroke="#00E5FF" stroke-width="3"/>
+  <circle cx="300" cy="170" r="24" fill="#1A2942" stroke="#FF3B30" stroke-width="2"/>
+  <!-- Rollers -->
+  <circle cx="300" cy="125" r="10" fill="#FF3B30"/>
+  <circle cx="339" cy="192" r="10" fill="#FF3B30"/>
+  <circle cx="261" cy="192" r="10" fill="#FF3B30"/>
+  <!-- Blue Fluids Tubing -->
+  <path d="M70 170 H235 A65 65 0 0 1 365 170 H530" stroke="#00E5FF" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M70 170 H235 A65 65 0 0 1 365 170 H530" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="8 8" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <text x="30" y="310" fill="#E0E0E0" font-family="sans-serif" font-size="12" font-weight="bold">PERISTALTIC PUMP CONTROL SYSTEM</text>
+</svg>
