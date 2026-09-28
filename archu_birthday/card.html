@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Printable Gift Card & Permanent QR — For Archu</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- html2canvas for card export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <!-- QRCode.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <style>
+    :root {
+      --bg-dark: #090a0d;
+      --card-bg: #111318;
+      --accent-gold: #e6ca85;
+      --accent-gold-light: #f7e7be;
+      --accent-gold-dark: #b89742;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(230, 202, 133, 0.25);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-display: 'Cinzel', serif;
+      --font-script: 'Alex Brush', cursive;
+      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+      position: relative;
+    }
+
+    /* Ambient background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 50% 15%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
+                  radial-gradient(circle at 80% 80%, rgba(224, 86, 126, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding: 20px 0 10px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(230, 202, 133, 0.1);
+      border: 1px solid var(--border-subtle);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+    }
+
+    .title {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Studio Controls */
+    .controls-panel {
+      background: rgba(17, 19, 24, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .control-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+    }
+
+    .control-select, .control-input {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      outline: none;
+      transition: all 0.2s;
+      font-family: var(--font-sans);
+    }
+
+    .control-select:focus, .control-input:focus {
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 10px rgba(230, 202, 133, 0.25);
+    }
+
+    /* Actions Bar */
+    .actions-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 26px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #e6ca85 0%, #b89742 100%);
+      color: #0d0e11;
+      box-shadow: 0 4px 20px rgba(230, 202, 133, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(230, 202, 133, 0.5);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+
+    /* Card Preview Stage */
+    .preview-stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 36px;
+      padding: 20px 0;
+    }
+
+    .cards-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+      width: 100%;
+    }
+
+    .card-preview-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card-side-label {
+      font-size: 0.82rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      opacity: 0.8;
+    }
+
+    /* ==========================================================================
+       GIFT CARD PHYSICAL SPECIFICATIONS & DESIGNS
+       Standard Wallet Card: 3.5 in x 2.0 in (88.9mm x 50.8mm) ~ 350px x 200px (100 DPI on screen)
+       ========================================================================== */
+    .gift-card {
+      width: 360px;
+      height: 215px;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16px 20px;
+      background-size: cover;
+      background-position: center;
+      user-select: none;
+    }
+
+    .gift-card:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(230, 202, 133, 0.4);
+    }
+
+    /* Card Dimensions Classes */
+    .gift-card.size-wallet {
+      width: 360px;
+      height: 215px;
+    }
+
+    .gift-card.size-square {
+      width: 280px;
+      height: 280px;
+    }
+
+    .gift-card.size-postcard {
+      width: 420px;
+      height: 280px;
+    }
+
+    /* ==================== THEME 1: SIGNATURE MIDNIGHT GOLD ==================== */
+    .theme-midnight-gold {
+      background: radial-gradient(circle at 10% 10%, #1c1d24 0%, #0c0d11 100%);
+      color: #f5f5f7;
+      border: 1px solid rgba(230, 202, 133, 0.35);
+    }
+
+    .theme-midnight-gold .card-inner-border {
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgba(230, 202, 133, 0.3);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    .theme-midnight-gold .card-corner-accent {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-color: #e6ca85;
+    }
+
+    /* ==================== THEME 2: ROSE BLUSH & GOLD ==================== */
+    .theme-rose-blush {
+      background: linear-gradient(135deg, #1c1318 0%, #2a1b22 50%, #150e12 100%);
+      color: #fff0f5;
+      border: 1px solid rgba(244, 182, 194, 0.4);
+    }
+
+    .theme-rose-blush .card-inner-border {
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgba(244, 182, 194, 0.35);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    .theme-rose-blush .gold-gradient-text {
+      background: linear-gradient(135deg, #ffc0cb 0%, #f4b6c2 50%, #fbd0d9 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    /* ==================== THEME 3: ROYAL PEARL IVORY ==================== */
+    .theme-pearl-ivory {
+      background: linear-gradient(135deg, #faf7f2 0%, #f1ebe1 100%);
+      color: #1a1a1e;
+      border: 1px solid rgba(184, 151, 66, 0.45);
+    }
+
+    .theme-pearl-ivory .card-inner-border {
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgba(184, 151, 66, 0.35);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    .theme-pearl-ivory .card-tagline {
+      color: #7a6b47 !important;
+    }
+
+    .theme-pearl-ivory .card-recipient-sub {
+      color: #555 !important;
+    }
+
+    .theme-pearl-ivory .gold-gradient-text {
+      background: linear-gradient(135deg, #8a6a1d 0%, #a47d25 50%, #684f14 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    .theme-pearl-ivory .card-footnote {
+      color: #777 !important;
+    }
+
+    .theme-pearl-ivory .card-monogram {
+      border-color: #a47d25 !important;
+      color: #8a6a1d !important;
+      background: rgba(184, 151, 66, 0.08) !important;
+    }
+
+    /* Corner Accents */
+    .corner-tl { top: 9px; left: 9px; border-top: 2px solid; border-left: 2px solid; }
+    .corner-tr { top: 9px; right: 9px; border-top: 2px solid; border-right: 2px solid; }
+    .corner-bl { bottom: 9px; left: 9px; border-bottom: 2px solid; border-left: 2px solid; }
+    .corner-br { bottom: 9px; right: 9px; border-bottom: 2px solid; border-right: 2px solid; }
+
+    /* Card Content Styling */
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .card-monogram {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--accent-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      background: rgba(230, 202, 133, 0.1);
+    }
+
+    .card-tagline {
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      font-weight: 600;
+    }
+
+    .card-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      z-index: 2;
+      margin: auto 0;
+    }
+
+    .card-script-title {
+      font-family: var(--font-script);
+      font-size: 2.2rem;
+      line-height: 1;
+      color: #fff;
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #f7e7be 0%, #e6ca85 50%, #c49f3e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card-title-serif {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      letter-spacing: 1px;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .card-recipient-sub {
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(243, 244, 246, 0.75);
+      margin-top: 4px;
+    }
+
+    .card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      z-index: 2;
+    }
+
+    .card-footnote {
+      font-size: 0.65rem;
+      letter-spacing: 0.8px;
+      color: rgba(243, 244, 246, 0.6);
+      font-style: italic;
+    }
+
+    .card-date {
+      font-size: 0.65rem;
+      letter-spacing: 1px;
+      color: var(--accent-gold);
+      font-weight: 500;
+    }
+
+    /* Back of Card Styling */
+    .card-back-layout {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .qr-container {
+      width: 105px;
+      height: 105px;
+      min-width: 105px;
+      background: #ffffff;
+      padding: 6px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(230, 202, 133, 0.6);
+    }
+
+    .qr-container img, .qr-container canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+    }
+
+    .card-back-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      text-align: left;
+    }
+
+    .scan-badge {
+      display: inline-block;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+    }
+
+    .card-back-title {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      letter-spacing: 1px;
+      line-height: 1.2;
+    }
+
+    .card-back-desc {
+      font-size: 0.68rem;
+      line-height: 1.4;
+      color: rgba(243, 244, 246, 0.75);
+    }
+
+    .card-back-url {
+      font-size: 0.6rem;
+      color: var(--accent-gold);
+      word-break: break-all;
+      opacity: 0.85;
+      font-family: monospace;
+    }
+
+    /* Instructions & Guide Cards */
+    .guide-section {
+      background: rgba(17, 19, 24, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .guide-card {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .guide-card h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--accent-gold);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .guide-card p, .guide-card li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .guide-card ul {
+      padding-left: 18px;
+      margin-top: 8px;
+    }
+
+    /* ==========================================================================
+       PRINT STYLES FOR HIGH QUALITY CARDSTOCK PRINTING
+       ========================================================================== */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      body::before, .header, .controls-panel, .actions-bar, .guide-section, .card-side-label, .back-to-site {
+        display: none !important;
+      }
+
+      .container {
+        max-width: 100% !important;
+        gap: 0 !important;
+      }
+
+      .preview-stage {
+        padding: 10mm !important;
+        display: block !important;
+      }
+
+      .cards-row {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15mm !important;
+        page-break-inside: avoid !important;
+      }
+
+      .gift-card {
+        box-shadow: none !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        border: 1px dashed #bbb !important; /* Cut line */
+        margin: 0 auto !important;
+        page-break-inside: avoid !important;
+      }
+
+      /* Cut marks */
+      .card-preview-wrapper {
+        position: relative;
+        padding: 5px;
+      }
+    }
+
+    /* Navigation button back */
+    .back-to-site {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      transition: opacity 0.2s;
+    }
+
+    .back-to-site:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <div>
+      <a href="index.html" class="back-to-site">← Back to Memory Book</a>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="badge">✨ Keepsake Gift Studio</div>
+      <h1 class="title">PRINTABLE GIFT CARD & QR</h1>
+      <p class="subtitle">
+        Generate a luxury mini card with a permanent QR code to slip inside a gift box, wallet, or greeting card for Archu.
+      </p>
+    </header>
+
+    <!-- Controls Panel -->
+    <div class="controls-panel">
+      
+      <!-- Card Theme -->
+      <div class="control-group">
+        <label class="control-label" for="theme-select">Aesthetic Style</label>
+        <select id="theme-select" class="control-select">
+          <option value="theme-midnight-gold">Signature Midnight & Gold</option>
+          <option value="theme-rose-blush">Romantic Rose & Blush</option>
+          <option value="theme-pearl-ivory">Royal Pearl & Gold Ivory</option>
+        </select>
+      </div>
+
+      <!-- Card Size -->
+      <div class="control-group">
+        <label class="control-label" for="size-select">Card Dimension</label>
+        <select id="size-select" class="control-select">
+          <option value="size-wallet">Wallet Card (3.5" × 2.0" / 89×51mm)</option>
+          <option value="size-square">Mini Square (3.0" × 3.0" / 76×76mm)</option>
+          <option value="size-postcard">Desk Keepsake (4.0" × 2.7" / 102×68mm)</option>
+        </select>
+      </div>
+
+      <!-- Target Permanent URL -->
+      <div class="control-group" style="grid-column: span 2;">
+        <label class="control-label" for="url-input">Permanent Live Website URL</label>
+        <input type="text" id="url-input" class="control-input" value="https://rohithachu089-cmd.github.io/rohith-portfolio/archu_birthday/">
+      </div>
+
+      <!-- Custom Note on Card -->
+      <div class="control-group" style="grid-column: span 2;">
+        <label class="control-label" for="note-input">Custom Note on Back</label>
+        <input type="text" id="note-input" class="control-input" value="Scan to open our timeless memory book ✨">
+      </div>
+
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="actions-bar">
+      <button class="btn btn-primary" onclick="window.print()">
+        🖨️ Print Card (with Cut Guides)
+      </button>
+      <button class="btn btn-secondary" id="download-front-btn">
+        📥 Save Front Card (PNG)
+      </button>
+      <button class="btn btn-secondary" id="download-back-btn">
+        📥 Save Back Card (PNG)
+      </button>
+      <a href="assets/images/permanent_qr.png" download="Archu_Memory_Book_QR.png" class="btn btn-secondary">
+        ⚡ Raw High-Res QR (PNG)
+      </a>
+    </div>
+
+    <!-- Preview Stage -->
+    <div class="preview-stage">
+      
+      <div class="cards-row">
+        
+        <!-- FRONT OF CARD -->
+        <div class="card-preview-wrapper">
+          <span class="card-side-label">Front Cover</span>
+          <div id="card-front" class="gift-card size-wallet theme-midnight-gold">
+            <div class="card-inner-border"></div>
+            <div class="card-corner-accent corner-tl"></div>
+            <div class="card-corner-accent corner-tr"></div>
+            <div class="card-corner-accent corner-bl"></div>
+            <div class="card-corner-accent corner-br"></div>
+
+            <div class="card-top">
+              <div class="card-monogram">A</div>
+              <div class="card-tagline">Birthday Keepsake</div>
+            </div>
+
+            <div class="card-center">
+              <div class="card-script-title gold-gradient-text">For Archu</div>
+              <div class="card-title-serif">A Timeless Memory Book</div>
+              <div class="card-recipient-sub">Made with endless love & moments</div>
+            </div>
+
+            <div class="card-bottom">
+              <div class="card-footnote">“Some moments are etched in eternity”</div>
+              <div class="card-date">Forever & Always ✨</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BACK OF CARD (WITH QR) -->
+        <div class="card-preview-wrapper">
+          <span class="card-side-label">Back Cover (QR Scan)</span>
+          <div id="card-back" class="gift-card size-wallet theme-midnight-gold">
+            <div class="card-inner-border"></div>
+            <div class="card-corner-accent corner-tl"></div>
+            <div class="card-corner-accent corner-tr"></div>
+            <div class="card-corner-accent corner-bl"></div>
+            <div class="card-corner-accent corner-br"></div>
+
+            <div class="card-back-layout">
+              <div class="qr-container" id="qr-target-box">
+                <!-- QR code injected here -->
+                <img id="qr-image" src="assets/images/permanent_qr.png" alt="QR Code to Archu Website">
+              </div>
+
+              <div class="card-back-info">
+                <div class="scan-badge">✦ Point & Scan Camera ✦</div>
+                <div class="card-back-title gold-gradient-text">Open Digital Book</div>
+                <div class="card-back-desc" id="card-custom-note">Scan to open our timeless memory book ✨</div>
+                <div class="card-back-url" id="card-display-url">rohithachu089-cmd.github.io/...</div>
+                <div class="card-footnote" style="margin-top: 4px;">Happy Birthday Archu 🤍</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Printing & Gifting Guide -->
+    <div class="guide-section">
+      <div class="guide-card">
+        <h3>💡 How to Print & Gift</h3>
+        <ul>
+          <li><strong>Paper Choice:</strong> Print on 250–300 GSM Matte or Glossy Photo Cardstock.</li>
+          <li><strong>Dimensions:</strong> Wallet size (3.5" x 2") fits inside standard credit card slots & purse envelopes.</li>
+          <li><strong>Cutting:</strong> Cut cleanly along the outer borders using a ruler and craft cutter / scissors.</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <h3>🌐 Permanent Hosting Guarantee</h3>
+        <p>
+          This QR code points to your live GitHub Pages link. It works 24/7 anywhere in the world on any iPhone or Android camera without requiring your computer to be on.
+        </p>
+      </div>
+
+      <div class="guide-card">
+        <h3>🎁 Gift Ideas</h3>
+        <p>
+          Tuck this card inside a box of chocolates (like Dairy Milk Silk), attach it with a ribbon to a bouquet, or hide it inside her birthday greeting card.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const themeSelect = document.getElementById('theme-select');
+    const sizeSelect = document.getElementById('size-select');
+    const urlInput = document.getElementById('url-input');
+    const noteInput = document.getElementById('note-input');
+    
+    const cardFront = document.getElementById('card-front');
+    const cardBack = document.getElementById('card-back');
+    const cardCustomNote = document.getElementById('card-custom-note');
+    const cardDisplayUrl = document.getElementById('card-display-url');
+    const qrTargetBox = document.getElementById('qr-target-box');
+
+    // Theme changer
+    themeSelect.addEventListener('change', (e) => {
+      const selectedTheme = e.target.value;
+      ['theme-midnight-gold', 'theme-rose-blush', 'theme-pearl-ivory'].forEach(theme => {
+        cardFront.classList.remove(theme);
+        cardBack.classList.remove(theme);
+      });
+      cardFront.classList.add(selectedTheme);
+      cardBack.classList.add(selectedTheme);
+    });
+
+    // Size changer
+    sizeSelect.addEventListener('change', (e) => {
+      const selectedSize = e.target.value;
+      ['size-wallet', 'size-square', 'size-postcard'].forEach(size => {
+        cardFront.classList.remove(size);
+        cardBack.classList.remove(size);
+      });
+      cardFront.classList.add(selectedSize);
+      cardBack.classList.add(selectedSize);
+    });
+
+    // Custom note changer
+    noteInput.addEventListener('input', (e) => {
+      cardCustomNote.textContent = e.target.value || "Scan to open our timeless memory book ✨";
+    });
+
+    // Live URL changer & QR generator
+    function updateQR() {
+      const url = urlInput.value.trim();
+      if (!url) return;
+      
+      // Update displayed shortened url
+      try {
+        const parsed = new URL(url);
+        cardDisplayUrl.textContent = parsed.hostname + (parsed.pathname.length > 15 ? parsed.pathname.substring(0, 15) + '...' : parsed.pathname);
+      } catch {
+        cardDisplayUrl.textContent = url.length > 25 ? url.substring(0, 25) + '...' : url;
+      }
+
+      // Re-generate QR
+      qrTargetBox.innerHTML = '';
+      new QRCode(qrTargetBox, {
+        text: url,
+        width: 128,
+        height: 128,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    }
+
+    urlInput.addEventListener('change', updateQR);
+    urlInput.addEventListener('blur', updateQR);
+
+    // Initial QR render
+    updateQR();
+
+    // Export Card as Image (front / back)
+    document.getElementById('download-front-btn').addEventListener('click', async () => {
+      const canvas = await html2canvas(cardFront, { scale: 3, useCORS: true, backgroundColor: null });
+      const link = document.createElement('a');
+      link.download = 'For_Archu_Card_Front.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+
+    document.getElementById('download-back-btn').addEventListener('click', async () => {
+      const canvas = await html2canvas(cardBack, { scale: 3, useCORS: true, backgroundColor: null });
+      const link = document.createElement('a');
+      link.download = 'For_Archu_Card_Back_QR.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+  </script>
+</body>
+</html>

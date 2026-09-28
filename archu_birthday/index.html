@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>For Archu — Happy Birthday</title>
+  <meta name="description" content="A personal, elegant memory book and birthday tribute for Archu. Some of the most beautiful memories are made in the smallest moments.">
+  
+  <!-- Favicon / Theme -->
+  <meta name="theme-color" content="#0d0e11">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+
+  <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans, Alex Brush & Cinzel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-loading">
+
+  <!-- Background Ambient Canvas & Sunset Beach Image Layer -->
+  <div class="site-bg-image-layer" aria-hidden="true"></div>
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+  <div class="film-grain" aria-hidden="true"></div>
+  <div class="ambient-glow glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
+
+  <!-- Cinematic Preloader -->
+  <div id="preloader" class="preloader" role="status" aria-label="Loading memory book">
+    <div class="preloader-content">
+      <div class="preloader-crest">
+        <span class="crest-monogram">A</span>
+        <div class="crest-ring"></div>
+      </div>
+      <h1 class="preloader-title">For Archu</h1>
+      <p class="preloader-subtitle">Loading memories & moments...</p>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar" id="preloader-bar"></div>
+      </div>
+      <button id="enter-btn" class="preloader-enter-btn">Open Memory Book ♫</button>
+      <p id="preloader-hint" class="preloader-hint" style="opacity: 0; transition: opacity 0.5s; font-size: 0.78rem; color: rgba(226, 232, 240, 0.7); margin-top: 14px; letter-spacing: 0.5px;">Click to enter with music</p>
+    </div>
+  </div>
+
+  <!-- Navigation & Music Controller (Floating Bar) -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Go to top">
+        <span class="brand-monogram">A</span>
+        <span class="brand-text">For Archu</span>
+      </a>
+
+      <div class="nav-actions">
+        <!-- Floating Ambient Audio Player -->
+        <div class="audio-player" id="audio-player" title="Background Music">
+          <button class="audio-toggle-btn" id="audio-toggle-btn" aria-label="Toggle background music">
+            <div class="audio-wave" id="audio-wave">
+              <span class="bar bar-1"></span>
+              <span class="bar bar-2"></span>
+              <span class="bar bar-3"></span>
+              <span class="bar bar-4"></span>
+            </div>
+            <span class="audio-label" id="audio-status-label">Play Music</span>
+          </button>
+          
+          <div class="audio-panel" id="audio-panel">
+            <div class="audio-track-info">
+              <span class="audio-track-title" id="audio-track-title">Ambient Piano</span>
+              <span class="audio-track-sub" id="audio-track-sub">Reflections in Grey</span>
+            </div>
+            <div class="audio-vol-wrap">
+              <label for="audio-volume" class="sr-only">Volume</label>
+              <input type="range" id="audio-volume" min="0" max="1" step="0.05" value="0.5" aria-label="Volume Slider">
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Jump Links Menu -->
+        <nav class="nav-links" id="nav-links">
+          <a href="#story" class="nav-link">Our Story</a>
+          <a href="#remember" class="nav-link">Memories</a>
+          <a href="#gallery" class="nav-link">Gallery</a>
+          <a href="#dream" class="nav-link">Our Dream</a>
+          <a href="#letter" class="nav-link">The Letter</a>
+          <a href="card.html" class="nav-link" style="color: var(--accent-gold, #e6ca85); font-weight: 600;" title="Printable Gift Card & QR">Gift Card 🎁</a>
+        </nav>
+
+        <!-- Secret Star Button (Easter Egg) -->
+        <button id="secret-star-btn" class="secret-star-trigger" title="A quiet thought" aria-label="Reveal secret message">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M12 2L14.4 8.6L21 9.2L16 13.8L17.5 20.4L12 17L6.5 20.4L8 13.8L3 9.2L9.6 8.6L12 2Z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO / OPENING SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+        <div class="hero-badge reveal-fade">
+          <span class="badge-dot"></span>
+          <span>A Birthday Memory Book</span>
+          <span class="badge-year">Special Edition</span>
+        </div>
+
+        <h1 class="hero-title reveal-fade-up">
+          <span class="title-for">For</span>
+          <span class="title-name shimmer-text">Archu</span>
+        </h1>
+
+        <div class="hero-separator reveal-scale">
+          <span class="sep-line"></span>
+          <span class="sep-diamond">◆</span>
+          <span class="sep-line"></span>
+        </div>
+
+        <!-- Animated Hero Portrait of Archu -->
+        <div class="hero-portrait-wrapper reveal-scale delay-1" id="hero-portrait-wrap">
+          <div class="hero-portrait-glow"></div>
+          <div class="hero-portrait-ring"></div>
+          <div class="hero-portrait-frame" id="hero-portrait-frame" data-lightbox="assets/images/archu_portrait.jpg" data-caption="Archana — Birthday Edition">
+            <img src="assets/images/archu_portrait.jpg" id="hero-portrait-img" alt="Archana" onerror="this.src='assets/images/our_first_photo_bike_ride.jpg?v=2'">
+          </div>
+        </div>
+
+        <p class="hero-subtitle reveal-fade-up delay-1">
+          "Some of the most beautiful memories are made in the smallest moments."
+        </p>
+
+        <div class="hero-meta reveal-fade-up delay-2">
+          <span class="meta-pill">3 Years of Moments</span>
+          <span class="meta-dot">•</span>
+          <span class="meta-pill">Quiet Rides</span>
+          <span class="meta-dot">•</span>
+          <span class="meta-pill">First Burger Date</span>
+          <span class="meta-dot">•</span>
+          <span class="meta-pill">Dairy Milk Silk</span>
+          <span class="meta-dot">•</span>
+          <span class="meta-pill">Internship Bus Rides</span>
+          <span class="meta-dot">•</span>
+          <span class="meta-pill">Snehatheeram</span>
+          <span class="meta-dot">•</span>
+          <span class="meta-pill">Kava Trails</span>
+          <span class="meta-dot">•</span>
+          <span class="meta-pill">Consoling You 🥺</span>
+          <span class="meta-dot">•</span>
+          <span class="meta-pill">Manifesting You 👁️</span>
+          <span class="meta-dot">•</span>
+          <span class="meta-pill">"He's My Boyfriend" 🏥</span>
+          <span class="meta-dot">•</span>
+          <span class="meta-pill">Pure Devotion 🤌</span>
+        </div>
+
+        <a href="#story" class="scroll-indicator reveal-fade-up delay-3" aria-label="Scroll to our story">
+          <span class="scroll-text">Scroll to explore our story</span>
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 1: OUR STORY (TIMELINE) -->
+    <section id="story" class="story-section">
+      <div class="section-container">
+        <div class="section-header reveal-fade-up">
+          <span class="section-tag">Chapter 01</span>
+          <h2 class="section-title">Our Story</h2>
+          <p class="section-desc">A timeline of moments that stayed etched into time.</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-line">
+            <div class="timeline-progress" id="timeline-progress"></div>
+          </div>
+
+          <!-- MEMORY 1: The Little Rides -->
+          <article class="timeline-item reveal-fade-up" id="timeline-mem-1">
+            <div class="timeline-node">
+              <span class="node-num">01</span>
+            </div>
+            
+            <div class="timeline-card">
+              <div class="card-glass-glow"></div>
+              <div class="card-meta">
+                <span class="card-tag">The Beginning</span>
+                <span class="card-badge">College Days</span>
+              </div>
+              
+              <h3 class="card-title">The Little Rides</h3>
+              <p class="card-subtitle">Behind the campus, where time slowed down</p>
+              
+              <p class="card-text">
+                Our relationship grew through small bike rides after college. There is a road behind our college that she really loved. Those simple rides became some of our special moments.
+              </p>
+
+              <blockquote class="card-quote">
+                "The quiet hum of the engine, the cool evening air, and the simple peace of that road behind college."
+              </blockquote>
+
+              <div class="card-media-grid">
+                <div class="media-frame main-frame" data-lightbox="assets/images/our_first_photo_bike_ride.jpg?v=2" data-caption="Our Very First Photo — The day you came with me on the bike">
+                  <img src="assets/images/our_first_photo_bike_ride.jpg?v=2" alt="Our very first photo on the bike" loading="lazy">
+                  <span class="media-zoom-icon">🔍</span>
+                  <div class="media-caption-badge gold-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">Our Very First Photo</div>
+                </div>
+                <div class="media-frame video-frame" data-lightbox="assets/videos/evening_bike_ride.mp4" data-caption="Evening Bike Ride — Moving through the quiet roads together">
+                  <video src="assets/videos/evening_bike_ride.mp4" poster="assets/images/evening_bike_ride_thumb.jpg" autoplay loop muted playsinline></video>
+                  <div class="video-play-hint">
+                    <div class="play-circle-icon">▶</div>
+                  </div>
+                  <div class="media-caption-badge">Evening Ride Video</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- MEMORY 02: Our First Burger Date -->
+          <article class="timeline-item reveal-fade-up reverse-item" id="timeline-mem-2">
+            <div class="timeline-node">
+              <span class="node-num">02</span>
+            </div>
+            
+            <div class="timeline-card burger-card">
+              <div class="card-glass-glow"></div>
+              <div class="card-meta">
+                <span class="card-tag">Sweet Beginnings</span>
+                <span class="card-badge gold-badge">First Burger Together</span>
+                <span class="card-badge diary-badge">📖 Keepsake in Diary</span>
+              </div>
+              
+              <h3 class="card-title">Our First Burger Date</h3>
+              <p class="card-subtitle">That simple meal, your playful smile & the tissue in my diary</p>
+              
+              <p class="card-text">
+                Sharing our very first burger together more than two years ago. Sitting across from each other, smiling uncontrollably, leaning over the table and snapping playful, silly selfies together. Before leaving, I took the tissue paper from our table and kept it safely tucked inside my diary. Even today, that tissue is still there — a quiet reminder of how a simple first burger date became an eternal keepsake.
+              </p>
+
+              <blockquote class="card-quote">
+                "I still remember our first burger together... and I still keep that tissue paper safely in my diary to this day."
+              </blockquote>
+
+              <div class="diary-keepsake-note">
+                <span class="diary-note-pin">📌</span>
+                <span class="diary-note-text"><strong>Personal Keepsake:</strong> That table tissue paper is still preserved safely in my diary, keeping the sweetness of our first burger date alive forever.</span>
+              </div>
+
+              <div class="card-media-single">
+                <div class="media-frame single-frame" data-lightbox="assets/images/first_burger_memory.jpg" data-caption="Our First Burger Date — Laughing across the table & the tissue I still keep in my diary">
+                  <img src="assets/images/first_burger_memory.jpg" alt="Our first burger together selfie" style="object-position: center 40%; max-height: 480px; object-fit: cover;" loading="lazy">
+                  <span class="media-zoom-icon">🔍</span>
+                  <div class="media-caption-badge gold-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">First Burger Together • Snapchat 2+ Years Ago</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- MEMORY 03: Dairy Milk Silk -->
+          <article class="timeline-item reveal-fade-up" id="timeline-mem-3">
+            <div class="timeline-node">
+              <span class="node-num">03</span>
+            </div>
+            
+            <div class="timeline-card silk-card">
+              <div class="card-glass-glow"></div>
+              <div class="card-meta">
+                <span class="card-tag">Sweet Surprises</span>
+                <span class="card-badge gold-badge">Small Sweet Memory</span>
+                <span class="card-badge silk-badge">🍫 Dairy Milk Silk</span>
+              </div>
+              
+              <h3 class="card-title">Dairy Milk Silk</h3>
+              <p class="card-subtitle">A sweet little surprise & that priceless smile</p>
+              
+              <p class="card-text">
+                Some of the most beautiful memories in our three years together were the smallest ones. Surprising you with Dairy Milk Silk chocolate, capturing your candid reaction, and watching your face light up with that pure, playful smile. It was never about the chocolate — it was about the sweet warmth of seeing you so genuinely happy.
+              </p>
+
+              <blockquote class="card-quote">
+                "Proof that the sweetest memories are always tucked away in the smallest, unscripted moments."
+              </blockquote>
+
+              <div class="card-media-single">
+                <div class="media-frame video-frame single-frame" data-lightbox="assets/videos/silk_chocolate_memory.mp4" data-caption="Dairy Milk Silk — A sweet surprise & that priceless smile">
+                  <video src="assets/videos/silk_chocolate_memory.mp4" poster="assets/images/silk_chocolate_thumb.jpg" autoplay loop muted playsinline style="max-height: 480px; object-fit: cover;"></video>
+                  <div class="video-play-hint">
+                    <div class="play-circle-icon">▶</div>
+                  </div>
+                  <div class="media-caption-badge gold-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">Dairy Milk Silk Video</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- MEMORY 04: 17 May -->
+          <article class="timeline-item reveal-fade-up reverse-item" id="timeline-mem-4">
+            <div class="timeline-node">
+              <span class="node-num">04</span>
+            </div>
+            
+            <div class="timeline-card highlight-card rain-kiss-card">
+              <div class="card-glass-glow"></div>
+              <div class="card-rain-canvas" id="rain-canvas-overlay"></div>
+              
+              <div class="card-meta">
+                <span class="card-tag">An Unforgettable Date</span>
+                <span class="card-badge gold-badge">17 May • 4:45 PM</span>
+                <span class="card-badge rain-badge">🌧️ Heavy Rain</span>
+              </div>
+              
+              <h3 class="card-title">17 May — Our First Kiss in the Rain</h3>
+              <p class="card-subtitle">4:45 PM • The road behind college in the heavy downpour</p>
+              
+              <p class="card-text">
+                Our first kiss was on that road behind college around 4:45 PM during heavy rain. While riding the scooty through the pouring monsoon, you asked me to stop. You stepped off, ran straight out into the open rain, spinning your hands with pure joy. Then you turned, walked slowly back towards me soaked in raindrops, and kissed me. A moment pure as rain that made the entire world vanish.
+              </p>
+
+              <blockquote class="card-quote">
+                "You ran into the heavy rain, hands spread wide, then walked back toward me. That 4:45 PM kiss stopped time completely."
+              </blockquote>
+
+              <div class="card-interactive-rain-bar">
+                <button class="rain-audio-toggle-btn" id="rain-audio-toggle" title="Toggle rain mood atmosphere">
+                  <span class="rain-btn-icon">🌧️</span>
+                  <span class="rain-btn-label">Rain Atmosphere Sound</span>
+                </button>
+                <span class="rain-time-tag">🕒 4:45 PM • Scooty in the Rain</span>
+              </div>
+
+              <div class="card-media-grid">
+                <div class="media-frame video-frame main-frame" data-lightbox="assets/videos/first_kiss_rain_video.mp4" data-caption="17 May in the Rain — Us soaked and smiling after our first kiss">
+                  <video src="assets/videos/first_kiss_rain_video.mp4" poster="assets/images/first_kiss_rain_thumb.jpg" autoplay loop muted playsinline></video>
+                  <div class="video-play-hint">
+                    <div class="play-circle-icon">▶</div>
+                  </div>
+                  <div class="media-caption-badge gold-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">17 May Rain Video</div>
+                </div>
+                <div class="media-frame secondary-frame" data-lightbox="assets/images/college_road.jpg" data-caption="The road behind college — 4:45 PM in the heavy rain">
+                  <img src="assets/images/college_road.jpg" alt="The road behind college in the rain" loading="lazy">
+                  <span class="media-zoom-icon">🔍</span>
+                  <div class="media-caption-badge">Road Behind College</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- MEMORY 05: The First Hug -->
+          <article class="timeline-item reveal-fade-up" id="timeline-mem-5">
+            <div class="timeline-node">
+              <span class="node-num">05</span>
+            </div>
+            
+            <div class="timeline-card hug-card">
+              <div class="card-glass-glow"></div>
+              <div class="card-meta">
+                <span class="card-tag">A Quiet Embrace</span>
+                <span class="card-badge gold-badge">Our First Hug</span>
+              </div>
+              
+              <h3 class="card-title">The First Hug</h3>
+              <p class="card-subtitle">Before the journey to Karaikudi</p>
+              
+              <p class="card-text">
+                A memory held close to the heart — that warm, unprompted first hug right before she left for a wedding in Karaikudi. A moment of pure affection and closeness that made time stand completely still.
+              </p>
+
+              <blockquote class="card-quote">
+                "A silent pause, a gentle embrace, and a warmth that stayed long after."
+              </blockquote>
+
+              <div class="card-media-single">
+                <div class="media-frame single-frame" data-lightbox="assets/images/first_hug_real.jpg?v=2" data-caption="Our First Hug — That sweet, unforgettable embrace before Karaikudi">
+                  <img src="assets/images/first_hug_real.jpg?v=2" alt="Our first hug before Karaikudi wedding trip" style="object-position: center 30%; max-height: 480px; object-fit: cover;" loading="lazy">
+                  <span class="media-zoom-icon">🔍</span>
+                  <div class="media-caption-badge gold-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">Our First Hug • Karaikudi</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- MEMORY 06: The Internship Days & Bus Rides -->
+          <article class="timeline-item reveal-fade-up reverse-item" id="timeline-mem-6">
+            <div class="timeline-node">
+              <span class="node-num">06</span>
+            </div>
+            
+            <div class="timeline-card intern-bus-card">
+              <div class="card-glass-glow"></div>
+              <div class="card-meta">
+                <span class="card-tag">Daily Journeys</span>
+                <span class="card-badge gold-badge">Internship Days</span>
+                <span class="card-badge">🚌 Evening Bus</span>
+                <span class="card-badge">🎒 Daily Commute</span>
+              </div>
+              
+              <h3 class="card-title">The Internship Days & Bus Rides</h3>
+              <p class="card-subtitle">Backpacks, goofy smiles, moving buses & sleeping on your shoulder</p>
+              
+              <p class="card-text">
+                During our internship days, the journeys to and from work became the sweetest part of our routine. From walking with heavy backpacks and sharing goofy salutes, to sitting side-by-side on the swaying evening bus. Laughing at silly jokes, and after exhausting hours, drifting off to sleep with my head leaning against your shoulder — feeling completely safe while you stayed still just so I wouldn't wake.
+              </p>
+
+              <blockquote class="card-quote">
+                "No matter how exhausting the day was, laughing together and resting my head on your shoulder on that swaying bus made the entire world feel peaceful."
+              </blockquote>
+
+              <div class="card-media-grid grid-3-items">
+                <!-- Video 1: Bus Ride Together -->
+                <div class="media-frame video-frame" data-lightbox="assets/videos/intern_bus_video.mp4" data-caption="Internship Bus Ride — Us traveling together, smiling and laughing on the evening bus">
+                  <video src="assets/videos/intern_bus_video.mp4" poster="assets/images/intern_bus_video_thumb.jpg" autoplay loop muted playsinline></video>
+                  <div class="video-play-hint">
+                    <div class="play-circle-icon">▶</div>
+                  </div>
+                  <div class="media-caption-badge gold-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">🚌 Bus Ride Together</div>
+                </div>
+
+                <!-- Video 2: Commute Walk with Backpack -->
+                <div class="media-frame video-frame" data-lightbox="assets/videos/intern_commute_video.mp4" data-caption="Internship Commute — Walking with the backpack and that hilarious goofy salute">
+                  <video src="assets/videos/intern_commute_video.mp4" poster="assets/images/intern_commute_video_thumb.jpg" autoplay loop muted playsinline></video>
+                  <div class="video-play-hint">
+                    <div class="play-circle-icon">▶</div>
+                  </div>
+                  <div class="media-caption-badge gold-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">🎒 Daily Commute Walk</div>
+                </div>
+
+                <!-- Photo 3: Sleeping on Shoulder -->
+                <div class="media-frame" data-lightbox="assets/images/intern_bus_memory.jpg" data-caption="Asleep on Your Shoulder — The quiet peace of having you beside me after exhausting days • @itach776 babeee">
+                  <img src="assets/images/intern_bus_memory.jpg" alt="Sleeping on your shoulder during internship bus ride" style="object-position: center 30%;" loading="lazy">
+                  <span class="media-zoom-icon">🔍</span>
+                  <div class="media-caption-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">💤 Asleep on Your Shoulder</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- MEMORY 07: A Night That Became a Morning -->
+          <article class="timeline-item reveal-fade-up" id="timeline-mem-7">
+            <div class="timeline-node">
+              <span class="node-num">07</span>
+            </div>
+            
+            <div class="timeline-card sunrise-transition-card" id="sunrise-card">
+              <div class="card-glass-glow"></div>
+              <div class="card-meta">
+                <span class="card-tag">Our First Trip</span>
+                <span class="card-badge gold-badge">Snehatheeram Beach</span>
+                <span class="card-badge">🌊 Dawn Waves</span>
+                <span class="card-badge dream-badge">✨ A Dream Life</span>
+              </div>
+              
+              <h3 class="card-title">A Night That Became a Morning</h3>
+              <p class="card-subtitle">Snehatheeram — Spinning together in the dawn waves, a dream life once upon a time</p>
+              
+              <p class="card-text">
+                Our first trip was that midnight ride to Snehatheeram. Riding late into the night through empty, open roads and waiting together on the quiet shore for the first light. Stepping barefoot into the cool rushing waves, holding hands, laughing, and spinning in the twilight. A lovable moment everyone dreams of — a dream life once upon a time, made real in that quiet ocean breeze.
+              </p>
+
+              <blockquote class="card-quote">
+                "Holding hands and spinning in the rushing dawn waves — living that lovable fairy-tale moment everyone dreams of, right here beside you."
+              </blockquote>
+
+              <!-- Feature Video: Snehatheeram Dream Moment -->
+              <div class="card-media-single" style="margin-bottom: 24px;">
+                <div class="media-frame video-frame single-frame" data-lightbox="assets/videos/snehatheeram_dream_moment.mp4" data-caption="Snehatheeram Dawn — Spinning in the waves, a lovable dream life moment once upon a time">
+                  <video src="assets/videos/snehatheeram_dream_moment.mp4" poster="assets/images/snehatheeram_dream_thumb.jpg" autoplay loop muted playsinline style="max-height: 440px; width: 100%; object-fit: cover;"></video>
+                  <div class="video-play-hint">
+                    <div class="play-circle-icon">▶</div>
+                  </div>
+                  <div class="media-caption-badge gold-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">🌊 Snehatheeram Dawn Video • Dancing in the Waves</div>
+                </div>
+              </div>
+
+              <!-- Interactive Night-to-Sunrise Visual Transition Widget -->
+              <div class="sunrise-interactive-widget" id="sunrise-widget">
+                <div class="sunrise-widget-header">
+                  <div class="widget-title">
+                    <span class="widget-icon">🌓</span>
+                    <span>Interactive Snehatheeram Dawn</span>
+                  </div>
+                  <div class="widget-hint">Slide to see night turn into morning</div>
+                </div>
+
+                <div class="sunrise-canvas-wrap" id="sunrise-canvas-container">
+                  <div class="sunrise-sky-layer night-layer" id="sky-night"></div>
+                  <div class="sunrise-sky-layer dawn-layer" id="sky-dawn"></div>
+                  
+                  <img src="assets/images/snehatheeram_dawn.jpg" alt="Snehatheeram sunrise with bike on the beach" class="sunrise-base-img" data-lightbox="assets/images/snehatheeram_dawn.jpg" data-caption="Snehatheeram — Watching the sunrise together">
+                  
+                  <div class="sunrise-sun-orb" id="sunrise-sun"></div>
+                  <div class="sunrise-stars-overlay" id="sunrise-stars"></div>
+                  
+                  <div class="sunrise-status-pill" id="sunrise-status">
+                    <span class="status-dot"></span>
+                    <span id="sunrise-status-text">04:30 AM • Midnight Stars</span>
+                  </div>
+                </div>
+
+                <div class="sunrise-slider-control">
+                  <span class="time-label">Midnight (02:00 AM)</span>
+                  <input type="range" id="sunrise-slider" min="0" max="100" value="70" aria-label="Snehatheeram Night to Sunrise slider">
+                  <span class="time-label">Sunrise (06:15 AM)</span>
+                </div>
+              </div>
+
+              <div class="card-media-grid" style="margin-top: 24px;">
+                <div class="media-frame" data-lightbox="assets/images/night_ride_highway.jpg" data-caption="Midnight highway ride to Snehatheeram">
+                  <img src="assets/images/night_ride_highway.jpg" alt="Midnight ride along the coast" loading="lazy">
+                  <span class="media-zoom-icon">🔍</span>
+                  <div class="media-caption-badge">Midnight Highway</div>
+                </div>
+                <div class="media-frame" data-lightbox="assets/images/helmets_twilight.jpg" data-caption="Resting helmets by the ocean">
+                  <img src="assets/images/helmets_twilight.jpg" alt="Helmets overlooking twilight sea" loading="lazy">
+                  <span class="media-zoom-icon">🔍</span>
+                  <div class="media-caption-badge">Shoreline Rest</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- MEMORY 08: Your First Birthday We Celebrated -->
+          <article class="timeline-item reveal-fade-up reverse-item" id="timeline-mem-8">
+            <div class="timeline-node">
+              <span class="node-num">08</span>
+            </div>
+            
+            <div class="timeline-card coastal-card">
+              <div class="card-glass-glow"></div>
+              <div class="card-meta">
+                <span class="card-tag">Special Milestone</span>
+                <span class="card-badge gold-badge">Varkala Birthday Trip</span>
+                <span class="card-badge">🌊 Holding Hands on the Cliff</span>
+                <span class="card-badge">🤍 Warm Touch & Fresh Ocean Air</span>
+              </div>
+              
+              <h3 class="card-title">Your First Birthday We Celebrated — Varkala Cliff</h3>
+              <p class="card-subtitle">Holding your warm hand along the cliff path & sitting in between the sea</p>
+              
+              <p class="card-text">
+                We celebrated your first birthday together in Varkala. Walking along the rugged cliff path with your warm hand held tightly in mine, the salty ocean breeze running through our hair, and the distant rhythm of crashing beach waves below. Sitting together on that small rocky cliff right in between the sea, watching the waves splash against the stone beneath our feet, listening to your pure excitement and feeling you smile from the bottom of my heart. Still today, whenever I close my eyes, I can feel the warmth of your hand, the fresh air, and that timeless peace.
+              </p>
+
+              <blockquote class="card-quote">
+                "Holding your hand on the cliff — the warm hand, the fresh ocean air, and the sound of the beach. Still today, if I close my eyes, I can feel it."
+              </blockquote>
+
+              <!-- Video Feature: Holding Hands Along the Cliff Path -->
+              <div class="card-media-single" style="margin: 20px 0;">
+                <div class="media-frame video-frame single-frame" data-lightbox="assets/videos/holding_hands_cliff.mp4" data-caption="Holding your hand on the cliff — The warm hand, the beach sound & fresh air. Still if I close my eyes, I can feel it.">
+                  <video src="assets/videos/holding_hands_cliff.mp4" poster="assets/images/holding_hands_cliff_thumb.jpg" autoplay loop muted playsinline style="max-height: 480px; object-fit: cover;"></video>
+                  <div class="video-play-hint">
+                    <div class="play-circle-icon">▶</div>
+                  </div>
+                  <div class="media-caption-badge gold-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">🌊 Holding Your Hand on the Cliff Path • Beach Breeze</div>
+                </div>
+              </div>
+
+              <div class="card-media-grid">
+                <div class="media-frame main-frame" data-lightbox="assets/images/varkala_waves_cliff.jpg" data-caption="Sitting on the small cliff in the sea — Watching the waves and listening to your excitement">
+                  <img src="assets/images/varkala_waves_cliff.jpg" alt="Sitting on the small cliff in between the sea with waves crashing" loading="lazy">
+                  <span class="media-zoom-icon">🔍</span>
+                  <div class="media-caption-badge gold-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">Cliff in the Sea</div>
+                </div>
+                <div class="media-frame secondary-frame" data-lightbox="assets/images/varkala_real_beach.jpg" data-caption="Sitting together by the ocean waves at Varkala beach">
+                  <img src="assets/images/varkala_real_beach.jpg" alt="Sitting by the ocean waves at Varkala beach" loading="lazy">
+                  <span class="media-zoom-icon">🔍</span>
+                  <div class="media-caption-badge">Varkala Shore</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- MEMORY 09: The Kava Trip & Wilde Café -->
+          <article class="timeline-item reveal-fade-up" id="timeline-mem-9">
+            <div class="timeline-node">
+              <span class="node-num">09</span>
+            </div>
+            
+            <div class="timeline-card kava-card">
+              <div class="card-glass-glow"></div>
+              <div class="card-meta">
+                <span class="card-tag">Scenic Escapes</span>
+                <span class="card-badge">Kava Trip & Café</span>
+              </div>
+              
+              <h3 class="card-title">The Kava Trip & Wilde Café</h3>
+              <p class="card-subtitle">Wilde Café selfie point & the quiet mountain trails</p>
+              
+              <p class="card-text">
+                Our ride to Kava surrounded by the mist-covered Western Ghats hills and the tranquil reservoir. Sitting together inside the wooden heart at Wilde Café overlooking the valley, enjoying the cool mountain breeze, and sharing the quiet beauty of the landscape together.
+              </p>
+
+              <blockquote class="card-quote">
+                "Sitting together in the heart bench at Wilde Café, surrounded by green hills, cool mountain breeze, and endless smiles."
+              </blockquote>
+
+              <div class="card-media-grid">
+                <div class="media-frame main-frame" data-lightbox="assets/images/kava_cafe.jpg" data-caption="Wilde Café Selfie Point — Sitting together in the heart bench overlooking the green hills">
+                  <img src="assets/images/kava_cafe.jpg" alt="Rohith and Archu at Wilde Café selfie point in Kava" style="object-position: center 70%;" loading="lazy">
+                  <span class="media-zoom-icon">🔍</span>
+                  <div class="media-caption-badge gold-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">Wilde Café</div>
+                </div>
+                <div class="media-frame secondary-frame" data-lightbox="assets/images/balcony_hills_real.jpg?v=2" data-caption="Kava Balcony View — Forehead to forehead overlooking the reservoir & quiet hills">
+                  <img src="assets/images/balcony_hills_real.jpg?v=2" alt="Rohith and Archu at Kava balcony overlooking the hills" style="object-position: center 30%;" loading="lazy">
+                  <span class="media-zoom-icon">🔍</span>
+                  <div class="media-caption-badge">Kava View</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- MEMORY 10: Consoling Each Other -->
+          <article class="timeline-item reveal-fade-up reverse-item" id="timeline-mem-10">
+            <div class="timeline-node">
+              <span class="node-num">10</span>
+            </div>
+            
+            <div class="timeline-card console-card">
+              <div class="card-glass-glow"></div>
+              <div class="card-meta">
+                <span class="card-tag">Pure Affection</span>
+                <span class="card-badge gold-badge">Consoling You</span>
+                <span class="card-badge sorry-badge">🥺 Sorry Da Vavuzz</span>
+                <span class="card-badge">😭 Silly Apologies</span>
+              </div>
+              
+              <h3 class="card-title">Consoling Each Other — The Sweet 'Sorry' Videos</h3>
+              <p class="card-subtitle">Puppy filters, funny feet namaste & promises to never stay upset</p>
+              
+              <p class="card-text">
+                In between all our journeys and busy days, there were moments of small disagreements, quiet pouts, and the most heartwarming efforts to console each other. You sending your adorable puppy-filter video from class saying <em>"Sorry da vavuzzzzz 🥺🦋🦋🦋"</em>, and me sending back a goofy namaste apology with my feet just to make you burst into laughter. No matter what happened, we could never stay upset for long — because love and laughter always won.
+              </p>
+
+              <blockquote class="card-quote">
+                "Sorry da vavuzzzzz 🥺🦋 — because no anger in the world could ever survive those puppy eyes and that goofy smile."
+              </blockquote>
+
+              <div class="card-media-grid">
+                <!-- Video 1: Archu's Sorry da vavuzzzzz -->
+                <div class="media-frame video-frame" data-lightbox="assets/videos/sorry_archu_vavuzz.mp4" data-caption="Sorry da vavuzzzzz 🥺🦋 — The cutest apology video that instantly melted my heart">
+                  <video src="assets/videos/sorry_archu_vavuzz.mp4" poster="assets/images/sorry_archu_vavuzz_thumb.jpg" autoplay loop muted playsinline></video>
+                  <div class="video-play-hint">
+                    <div class="play-circle-icon">▶</div>
+                  </div>
+                  <div class="media-caption-badge gold-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">🥺 Archu: Sorry Da Vavuzz</div>
+                </div>
+
+                <!-- Video 2: Rohith's Funny Namaste Sorry -->
+                <div class="media-frame video-frame" data-lightbox="assets/videos/sorry_rohith_namaste.mp4" data-caption="Sorry 😭🥺 — The goofy feet namaste apology to make you laugh and console you">
+                  <video src="assets/videos/sorry_rohith_namaste.mp4" poster="assets/images/sorry_rohith_namaste_thumb.jpg" autoplay loop muted playsinline></video>
+                  <div class="video-play-hint">
+                    <div class="play-circle-icon">▶</div>
+                  </div>
+                  <div class="media-caption-badge gold-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">😭 Rohith: Goofy 'Sorry'</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- MEMORY 11: Manifesting You -->
+          <article class="timeline-item reveal-fade-up" id="timeline-mem-11">
+            <div class="timeline-node">
+              <span class="node-num">11</span>
+            </div>
+            
+            <div class="timeline-card manifest-card">
+              <div class="card-glass-glow"></div>
+              <div class="card-meta">
+                <span class="card-tag">Late-Night Thoughts</span>
+                <span class="card-badge gold-badge">Manifesting You</span>
+                <span class="card-badge eye-badge">✨ Mine 🫠🫠</span>
+              </div>
+              
+              <h3 class="card-title">Manifesting You — Those Eyes on My Laptop</h3>
+              <p class="card-subtitle">Quiet study nights, glowing screens & whispering 'Mine' to the universe</p>
+              
+              <p class="card-text">
+                During those late nights studying and working late into the hours, you were always right there with me. Zooming in on your expressive, beautiful eyes on my laptop screen — with that sweet little bindi — keeping your gaze open while I worked. Looking into your eyes, feeling that quiet warmth settle deep in my heart, and softly typing <em>"Mine 🫠🫠"</em>. Manifesting you, our bond, and our future together into every second of my life.
+              </p>
+
+              <blockquote class="card-quote">
+                "Zoomed in on your eyes glowing on my laptop screen, whispering 'Mine 🫠🫠' — manifesting our forever in every quiet hour."
+              </blockquote>
+
+              <div class="card-media-single">
+                <div class="media-frame video-frame single-frame" data-lightbox="assets/videos/manifest_eyes_laptop.mp4" data-caption="Manifesting Her Eyes on Laptop — Late nights & whispering 'Mine 🫠🫠'">
+                  <video src="assets/videos/manifest_eyes_laptop.mp4" poster="assets/images/manifest_eyes_laptop_thumb.jpg" autoplay loop muted playsinline style="max-height: 480px; object-fit: cover;"></video>
+                  <div class="video-play-hint">
+                    <div class="play-circle-icon">▶</div>
+                  </div>
+                  <div class="media-caption-badge gold-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">💻 Manifesting Her Eyes • Mine 🫠🫠</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- MEMORY 12: Sick Day in the Hospital -->
+          <article class="timeline-item reveal-fade-up reverse-item" id="timeline-mem-12">
+            <div class="timeline-node">
+              <span class="node-num">12</span>
+            </div>
+            
+            <div class="timeline-card hospital-card">
+              <div class="card-glass-glow"></div>
+              <div class="card-meta">
+                <span class="card-tag">Unbreakable Bond</span>
+                <span class="card-badge gold-badge">Hospital Bedside</span>
+                <span class="card-badge hospital-badge">🏥 "He's My Boyfriend"</span>
+                <span class="card-badge">🤍 Holding Hands</span>
+              </div>
+              
+              <h3 class="card-title">Sick Day in the Hospital — "He's My Boyfriend"</h3>
+              <p class="card-subtitle">Holding hands by your bedside & the first time you claimed me</p>
+              
+              <p class="card-text">
+                A memory etched deeply into my soul. Sitting right beside you in the hospital room while you were unwell, holding your hand tight with the IV drip bandage on your wrist. When the nurse walked in, you first told her I was your cousin — but she questioned how she could allow a cousin to stay inside. Seeing you look at her and, for the very first time, proudly and softly tell her that I was your boyfriend so I could stay right by your side. Sitting there next to you, refusing to let go of your hand, knowing I would stay through every sickness, every storm, and every chapter of our lives.
+              </p>
+
+              <blockquote class="card-quote">
+                "You told the nurse I was your cousin, and when she asked how she could allow me, you looked up and said I was your boyfriend. That first time you claimed me meant the world."
+              </blockquote>
+
+              <div class="card-media-single">
+                <div class="media-frame video-frame single-frame" data-lightbox="assets/videos/hospital_sick_day.mp4" data-caption="Sick Day in the Hospital — Holding hands by your bedside & 'He's my boyfriend'">
+                  <video src="assets/videos/hospital_sick_day.mp4" poster="assets/images/hospital_sick_day_thumb.jpg" autoplay loop muted playsinline style="max-height: 480px; object-fit: cover;"></video>
+                  <div class="video-play-hint">
+                    <div class="play-circle-icon">▶</div>
+                  </div>
+                  <div class="media-caption-badge gold-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">🏥 Hospital Bedside • Sick Day Together</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- MEMORY 13: Pure Affection & Devotion -->
+          <article class="timeline-item reveal-fade-up" id="timeline-mem-13">
+            <div class="timeline-node">
+              <span class="node-num">13</span>
+            </div>
+            
+            <div class="timeline-card affection-card">
+              <div class="card-glass-glow"></div>
+              <div class="card-meta">
+                <span class="card-tag">Unconditional Devotion</span>
+                <span class="card-badge gold-badge">Pure Affection</span>
+                <span class="card-badge affection-badge">🤌 "This Is How He Shows Affection"</span>
+                <span class="card-badge">🤍 Surrendering Ego</span>
+              </div>
+              
+              <h3 class="card-title">Pure Affection & Devotion — Touching Your Feet</h3>
+              <p class="card-subtitle">No ego, only love — holding your feet with utmost care & reverence</p>
+              
+              <p class="card-text">
+                You captured this quiet moment and captioned it: <em>"This is how shows his affection 🤌🫠"</em>. Holding your feet gently in my hands, massaging the tiredness away, and resting my touch there in complete devotion. I still remember the painful day in the past when foolish ego made me hesitate to touch your feet — a momentary lapse that I have regretted every single minute of my life. But true love has no room for pride. Touching your feet is my silent promise of respect, surrender, and lifelong devotion to you. You are my queen, my home, and my world.
+              </p>
+
+              <blockquote class="card-quote">
+                "Touching your feet isn't just affection — it's leaving all pride behind, choosing you with my whole heart, and promising to cherish you forever."
+              </blockquote>
+
+              <div class="card-media-single">
+                <div class="media-frame video-frame single-frame" data-lightbox="assets/videos/pure_affection_feet.mp4" data-caption="Pure Affection & Devotion — 'This is how shows his affection 🤌🫠'">
+                  <video src="assets/videos/pure_affection_feet.mp4" poster="assets/images/pure_affection_feet_thumb.jpg" autoplay loop muted playsinline style="max-height: 480px; object-fit: cover;"></video>
+                  <div class="video-play-hint">
+                    <div class="play-circle-icon">▶</div>
+                  </div>
+                  <div class="media-caption-badge gold-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">🤌 Pure Affection • Touching Your Feet</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- MEMORY 14: Tying Your Hair & Carrying You Like a Baby -->
+          <article class="timeline-item reveal-fade-up reverse-item" id="timeline-mem-14">
+            <div class="timeline-node">
+              <span class="node-num">14</span>
+            </div>
+            
+            <div class="timeline-card baby-care-card">
+              <div class="card-glass-glow"></div>
+              <div class="card-meta">
+                <span class="card-tag">Pure Innocence & Care</span>
+                <span class="card-badge gold-badge">🎀 Tying Her Hair</span>
+                <span class="card-badge">✨ Looking Into Your Eyes</span>
+                <span class="card-badge baby-badge">👶 Carrying You Like a Baby</span>
+              </div>
+              
+              <h3 class="card-title">Tying Your Hair & Carrying You Like a Baby</h3>
+              <p class="card-subtitle">Looking into your eyes, gently styling your hair, and holding you close</p>
+              
+              <p class="card-text">
+                One of the sweetest, most innocent chapters of us. Standing behind you, gently gathering and tying your soft hair, catching your gaze in the mirror and getting lost looking straight into your eyes with so much warmth. And right in front of my cousin, picking you up and carrying you on my hip without a single hesitation — holding you tight just like a precious little baby, completely proud and shameless in my love for you. You will always be my little girl to protect, pamper, and cherish for life.
+              </p>
+
+              <blockquote class="card-quote">
+                "Tying your hair, getting lost in your eyes, and carrying you on my hip in front of my cousin like a baby — pure, shameless, and gentle love."
+              </blockquote>
+
+              <div class="card-media-single">
+                <div class="media-frame video-frame single-frame" data-lightbox="assets/videos/tying_hair_baby_care.mp4" data-caption="Tying Your Hair & Carrying You Like a Baby — Looking into your eyes with pure tenderness">
+                  <video src="assets/videos/tying_hair_baby_care.mp4" poster="assets/images/tying_hair_baby_care_thumb.jpg" autoplay loop muted playsinline style="max-height: 480px; object-fit: cover;"></video>
+                  <div class="video-play-hint">
+                    <div class="play-circle-icon">▶</div>
+                  </div>
+                  <div class="media-caption-badge gold-badge" style="background: rgba(20, 22, 28, 0.85); border-color: rgba(226, 232, 240, 0.4);">🎀 Tying Your Hair • Caring Like a Baby</div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: THINGS I REMEMBER (SENSORY CARDS) -->
+    <section id="remember" class="remember-section">
+      <div class="section-container">
+        <div class="section-header reveal-fade-up">
+          <span class="section-tag">Chapter 02</span>
+          <h2 class="section-title">Things I Remember</h2>
+          <p class="section-desc">The sensory details, quiet pauses, and familiar places.</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="memory-cards-grid" id="memory-cards-container">
+          <!-- Populated dynamically via JS / config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: PHOTO GALLERY -->
+    <section id="gallery" class="gallery-section">
+      <div class="section-container">
+        <div class="section-header reveal-fade-up">
+          <span class="section-tag">Chapter 03</span>
+          <h2 class="section-title">Visual Memories</h2>
+          <p class="section-desc">A collection of moments captured in time. Click any photo to expand.</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="gallery-filters reveal-fade-up">
+          <button class="filter-btn active" data-filter="all">All Moments</button>
+          <button class="filter-btn" data-filter="polaroid">Polaroids</button>
+          <button class="filter-btn" data-filter="cinematic">Cinematic & Videos</button>
+        </div>
+
+        <!-- Gallery Masonry / Grid -->
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Populated dynamically via JS / config.js -->
+        </div>
+
+        <!-- Helper Note for Rohith -->
+        <div class="gallery-note reveal-fade-up">
+          <span class="note-icon">📷</span>
+          <span>Tip: You can easily swap any photo or add new ones by editing <code>config.js</code>.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: A SACRED DREAM (GURUVAYUR) -->
+    <section id="dream" class="dream-section">
+      <div class="section-container">
+        <div class="section-header reveal-fade-up">
+          <span class="section-tag gold-tag">Chapter 04</span>
+          <h2 class="section-title">A Morning in Guruvayur</h2>
+          <p class="section-desc">A sacred dream we both carry close to our hearts.</p>
+          <div class="section-divider gold-divider"></div>
+        </div>
+
+        <div class="dream-showcase reveal-fade-up">
+          <!-- Card 1: Sacred Dream Manifested (Traditional Kerala Attire & Couple Art) -->
+          <div class="dream-card dream-art-card">
+            <div class="dream-lamp-glow"></div>
+            
+            <div class="dream-media-wrap dream-art-wrap" data-lightbox="assets/images/couple_watercolor_art.png" data-caption="“I didn’t realize how precious the little moments were while I was living them. The smiles, the rides, the silly conversations, and simply having you beside me. Looking back, I understand their value now. You made ordinary days feel special, Archu. ❤️”">
+              <div class="dream-img-frame dream-art-frame">
+                <img src="assets/images/couple_watercolor_art.png" alt="Rohith and Archu in Kerala Kasavu saree and traditional silk kurta" loading="lazy">
+                <span class="media-zoom-icon">🔍</span>
+              </div>
+              <div class="dream-floating-badge gold-glow-badge">
+                <span class="badge-icon">🤍</span>
+                <span>You • Me • Always</span>
+              </div>
+            </div>
+
+            <div class="dream-content">
+              <div class="dream-meta-row">
+                <span class="dream-tag">The Sacred Vision</span>
+                <span class="dream-subtag">Kasavu & Gold • You Me Always</span>
+              </div>
+
+              <h3 class="dream-heading">You Made Ordinary Days Feel Special</h3>
+
+              <blockquote class="dream-quote">
+                “I didn’t realize how precious the little moments were while I was living them.<br>
+                The smiles, the rides, the silly conversations, and simply having you beside me.<br>
+                Looking back, I understand their value now.<br>
+                You made ordinary days feel special, Archu. ❤️”
+              </blockquote>
+
+              <div class="dream-highlights-grid">
+                <div class="dream-pill">
+                  <span class="pill-icon">🤍</span>
+                  <span>You & Me Always</span>
+                </div>
+                <div class="dream-pill">
+                  <span class="pill-icon">🌸</span>
+                  <span>Kasavu Saree & Jasmine</span>
+                </div>
+                <div class="dream-pill">
+                  <span class="pill-icon">✨</span>
+                  <span>Temple Gold & Silk</span>
+                </div>
+                <div class="dream-pill">
+                  <span class="pill-icon">🪔</span>
+                  <span>Eternal Devotion</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: The Temple Sanctum (Guruvayur) -->
+          <div class="dream-card dream-card-reverse">
+            <div class="dream-lamp-glow"></div>
+            
+            <div class="dream-media-wrap" data-lightbox="assets/images/guruvayur_dream.jpg" data-caption="A Morning in Guruvayur — A sacred dream of a new beginning together">
+              <div class="dream-img-frame">
+                <img src="assets/images/guruvayur_dream.jpg" alt="Our dream wedding at Guruvayur Temple" loading="lazy">
+                <span class="media-zoom-icon">🔍</span>
+              </div>
+              <div class="dream-floating-badge">
+                <span class="badge-icon">🪔</span>
+                <span>Sree Guruvayurappa</span>
+              </div>
+            </div>
+
+            <div class="dream-content">
+              <div class="dream-meta-row">
+                <span class="dream-tag">A Sacred Wish</span>
+                <span class="dream-subtag">Tradition & Devotion</span>
+              </div>
+
+              <h3 class="dream-heading">A Morning We Still Dream Of</h3>
+              
+              <p class="dream-text">
+                The golden warmth of the temple lamps, the gentle sound of morning bells, the scent of fresh jasmine and sandalwood in the air. Standing together in simplicity, reverence, and quiet love under the divine sanctum of Guruvayur.
+              </p>
+
+              <blockquote class="dream-quote">
+                "Someday... In Guruvayur, with you, in a new beginning of our story."
+              </blockquote>
+
+              <div class="dream-highlights-grid">
+                <div class="dream-pill">
+                  <span class="pill-icon">✨</span>
+                  <span>Temple Chimes & Dawn</span>
+                </div>
+                <div class="dream-pill">
+                  <span class="pill-icon">🌸</span>
+                  <span>Jasmine Garlands</span>
+                </div>
+                <div class="dream-pill">
+                  <span class="pill-icon">🪔</span>
+                  <span>Golden Deepams</span>
+                </div>
+                <div class="dream-pill">
+                  <span class="pill-icon">🤍</span>
+                  <span>A Sacred Promise</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: THE LETTER -->
+    <section id="letter" class="letter-section">
+      <div class="section-container">
+        <div class="section-header reveal-fade-up">
+          <span class="section-tag">Chapter 05</span>
+          <h2 class="section-title">A Letter For You</h2>
+          <p class="section-desc">Written with sincerity and quiet gratitude.</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="letter-wrapper reveal-fade-up">
+          <div class="letter-paper" id="letter-paper">
+            
+            <!-- Paper Header Details -->
+            <div class="letter-top-meta">
+              <div class="letter-stamp">
+                <span class="stamp-icon">✦</span>
+                <span class="stamp-text">ARCHU • 2026</span>
+              </div>
+              <div class="letter-font-toggle" title="Toggle font style">
+                <button id="letter-font-btn" class="font-toggle-btn">Switch to Clean Type</button>
+              </div>
+            </div>
+
+            <!-- Authentic Letter Body -->
+            <div class="letter-body handwritten-mode" id="letter-body">
+              <p class="letter-salutation">Archu,</p>
+
+              <p class="letter-para">
+                I know saying sorry can't change what happened, but I still want to say it honestly. I realize now that there were times when you needed my attention, care, and presence, and I didn't give you what you deserved. I understand why that hurt you, and I'm genuinely sorry.
+              </p>
+
+              <p class="letter-para">
+                I don't want to convince you with promises or ask you to forget everything overnight. I know trust and feelings don't come back just because I say the right words. I want to show you through my actions that I have understood my mistakes and that I can become a better person.
+              </p>
+
+              <p class="letter-para">
+                I also understand that you are scared of relationships right now, and I respect the time you've asked for. I won't pressure you or force you to make a decision. You deserve the space to understand what you truly want.
+              </p>
+
+              <p class="letter-para">
+                The three years we shared mean a lot to me. I will always be grateful for the little things — the rides after college, that road behind college, our late-night trip, watching the sunrise, Varkala, 17 May, and all those ordinary moments that became special because they were ours.
+              </p>
+
+              <p class="letter-para">
+                I'm not asking you to come back today. I just want you to know that I'm sorry for the ways I hurt you, I understand my mistakes better now, and I'm going to work on myself — not just to get you back, but because I should have done that earlier.
+              </p>
+
+              <p class="letter-para">
+                Whatever you decide in the future, I'll respect your choice. I genuinely want you to be happy.
+              </p>
+
+              <div class="letter-closing">
+                <p class="letter-sign">Happy Birthday, Archu. ❤️</p>
+              </div>
+            </div>
+
+            <!-- Keepsake Tribute Frame -->
+            <div class="letter-keepsake-tribute reveal-fade-up">
+              <div class="keepsake-frame" data-lightbox="assets/images/couple_watercolor_art.png" data-caption="“I didn’t realize how precious the little moments were while I was living them. The smiles, the rides, the silly conversations, and simply having you beside me. Looking back, I understand their value now. You made ordinary days feel special, Archu. ❤️”">
+                <div class="keepsake-img-box">
+                  <img src="assets/images/couple_watercolor_art.png" alt="You Me Always — Rohith and Archu watercolor portrait" loading="lazy">
+                  <span class="media-zoom-icon">🔍</span>
+                  <div class="keepsake-badge">
+                    <span>You Me Always ♡</span>
+                  </div>
+                </div>
+                <div class="keepsake-details">
+                  <span class="keepsake-label">A Birthday Keepsake • 2026</span>
+                  <p class="keepsake-quote">
+                    “I didn’t realize how precious the little moments were while I was living them.<br>
+                    The smiles, the rides, the silly conversations, and simply having you beside me.<br>
+                    Looking back, I understand their value now.<br>
+                    You made ordinary days feel special, Archu. ❤️”
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Letter Wax Seal & Hidden Secret Star -->
+            <div class="letter-seal-container">
+              <div class="letter-wax-seal" id="letter-wax-seal" title="Click to reveal a quiet thought">
+                <div class="seal-inner">
+                  <span class="seal-monogram">A</span>
+                  <div class="seal-sparkle">✦</div>
+                </div>
+              </div>
+              <span class="seal-hint">Click the seal</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: FINAL BIRTHDAY GREETING & REPLAY -->
+    <section id="finale" class="finale-section">
+      <div class="section-container">
+        <div class="finale-card reveal-fade-up">
+          <div class="finale-sparkle-bg"></div>
+          
+          <div class="finale-crest">
+            <span class="finale-monogram">A</span>
+          </div>
+
+          <h2 class="finale-title">
+            Happy Birthday, Archu <span class="heart-symbol">❤️</span>
+          </h2>
+
+          <p class="finale-subtext">
+            Thank you for being part of so many beautiful memories.
+          </p>
+
+          <div class="finale-actions" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px;">
+            <button id="replay-btn" class="replay-button">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+              </svg>
+              <span>Replay our story</span>
+            </button>
+            <a href="card.html" class="replay-button gift-card-button" style="text-decoration: none; background: rgba(230, 202, 133, 0.12); border: 1px solid rgba(230, 202, 133, 0.4); color: #e6ca85; display: inline-flex; align-items: center; gap: 8px;">
+              <span>🎁</span>
+              <span>Print Keepsake Gift Card & QR</span>
+            </a>
+          </div>
+
+          <footer class="site-footer">
+            <p class="footer-note">Crafted with care, memories, and sincere wishes.</p>
+            <p class="footer-copy">For Archana • Always wishing you the best</p>
+          </footer>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="Photo Lightbox">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-container">
+      <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close Lightbox">✕</button>
+      
+      <button class="lightbox-nav-btn prev-btn" id="lightbox-prev" aria-label="Previous Photo">❮</button>
+      
+      <div class="lightbox-content">
+        <div class="lightbox-img-wrap">
+          <img src="" alt="" id="lightbox-img">
+          <video id="lightbox-video" controls playsinline style="display: none; max-width: 100%; max-height: 70vh; border-radius: var(--radius-md);"></video>
+          <div class="lightbox-loader" id="lightbox-loader"></div>
+        </div>
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+        <div class="lightbox-counter" id="lightbox-counter">1 / 11</div>
+      </div>
+      
+      <button class="lightbox-nav-btn next-btn" id="lightbox-next" aria-label="Next Photo">❯</button>
+    </div>
+  </div>
+
+  <!-- SECRET SURPRISE MODAL (EASTER EGG) -->
+  <div id="secret-modal" class="secret-modal" aria-hidden="true" role="dialog" aria-label="A Quiet Message">
+    <div class="secret-backdrop"></div>
+    <div class="secret-card">
+      <button class="secret-close-btn" id="secret-close" aria-label="Close message">✕</button>
+      
+      <div class="secret-icon-wrap">
+        <span class="secret-star-icon">✦</span>
+      </div>
+      
+      <h3 class="secret-title" id="secret-title">A Quiet Note Just For You</h3>
+      
+      <div class="secret-divider"></div>
+      
+      <p class="secret-message" id="secret-message">
+        Thank you for the laughs, the journeys, the honesty, and for being who you are. These three years gave me memories I will always hold with respect and fondness. May your year ahead be gentle, fulfilling, and filled with joy.
+      </p>
+      
+      <div class="secret-footer">
+        <span class="secret-signature">Happy Birthday, Archu</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Element -->
+  <audio id="bg-audio" src="assets/audio/oorum_blood_reprise.mp3" preload="auto" loop playsinline>
+    <source src="assets/audio/oorum_blood_reprise.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
