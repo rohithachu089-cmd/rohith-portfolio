@@ -2733,4 +2733,76 @@ section {
   .letter-paper {
     padding: 28px 20px;
   }
+
+  .site-bg-image-layer {
+    background-attachment: scroll !important; /* Fix mobile background lag */
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-pad-y: 60px;
+    --section-pad-x: 16px;
+  }
+
+  .top-nav {
+    padding-top: max(10px, env(safe-area-inset-top));
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .brand-text {
+    font-size: 0.95rem;
+  }
+
+  .audio-label {
+    display: none; /* Keep clean audio button icon on small phones */
+  }
+
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem !important;
+  }
+
+  .timeline-item {
+    padding-left: 44px;
+  }
+
+  .timeline-line {
+    left: 14px;
+  }
+
+  .timeline-node {
+    left: 0;
+    width: 30px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+
+  .lightbox-img-wrap {
+    max-width: 94vw;
+    max-height: 60vh;
+  }
+
+  .lightbox-img-wrap img,
+  .lightbox-img-wrap video {
+    max-width: 94vw;
+    max-height: 60vh;
+  }
+
+  .lightbox-nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .prev-btn { left: 5px; }
+  .next-btn { right: 5px; }
+
+  .secret-card {
+    padding: 30px 20px;
+  }
 }

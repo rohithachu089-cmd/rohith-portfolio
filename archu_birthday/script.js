@@ -120,21 +120,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Seamless unlock on first user gesture anywhere on the page
+  // Seamless unlock on first user gesture anywhere on the page (iOS & Android touch support)
   function triggerAudioOnFirstGesture(e) {
     if (e && e.target && e.target.closest && e.target.closest("#audio-player")) {
       return; // Handled directly by the player toggle button
     }
     hasInteracted = true;
-    window.removeEventListener("pointerdown", triggerAudioOnFirstGesture);
-    window.removeEventListener("keydown", triggerAudioOnFirstGesture);
+    ['touchstart', 'touchend', 'pointerdown', 'click', 'keydown'].forEach(evt => {
+      window.removeEventListener(evt, triggerAudioOnFirstGesture);
+    });
 
     if (!isPlayingAudio && config.audio && config.audio.enabled) {
       playAudio();
     }
   }
-  window.addEventListener("pointerdown", triggerAudioOnFirstGesture);
-  window.addEventListener("keydown", triggerAudioOnFirstGesture);
+  ['touchstart', 'touchend', 'pointerdown', 'click', 'keydown'].forEach(evt => {
+    window.addEventListener(evt, triggerAudioOnFirstGesture, { passive: true });
+  });
 
   /* ==========================================================================
      2. DYNAMIC CONTENT RENDERING
@@ -715,6 +717,27 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "ArrowLeft" && lightboxPrev) lightboxPrev.click();
     if (e.key === "ArrowRight" && lightboxNext) lightboxNext.click();
   });
+
+  // Mobile Touch Swipe Navigation for Lightbox
+  let touchStartX = 0;
+  let touchEndX = 0;
+  if (lightboxModal) {
+    lightboxModal.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightboxModal.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diffX = touchEndX - touchStartX;
+      if (Math.abs(diffX) > 45) {
+        if (diffX < 0 && lightboxNext) {
+          lightboxNext.click(); // Swipe left -> next photo
+        } else if (diffX > 0 && lightboxPrev) {
+          lightboxPrev.click(); // Swipe right -> previous photo
+        }
+      }
+    }, { passive: true });
+  }
 
   /* ==========================================================================
      6. SECRET SURPRISE / EASTER EGG MODAL

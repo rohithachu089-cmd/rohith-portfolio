@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#090a0d">
   <title>Printable Gift Card & Permanent QR — For Archu</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
   
@@ -621,6 +624,58 @@
 
     .back-to-site:hover {
       opacity: 0.8;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px 12px;
+      }
+      .title {
+        font-size: 1.55rem;
+        letter-spacing: 1px;
+      }
+      .controls-panel {
+        padding: 16px;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .control-group {
+        grid-column: span 1 !important;
+      }
+      .actions-bar {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+      }
+      .btn {
+        width: 100%;
+        padding: 12px 16px;
+      }
+      .gift-card.size-wallet {
+        width: 320px;
+        height: 195px;
+        padding: 14px 16px;
+      }
+      .gift-card.size-square {
+        width: 270px;
+        height: 270px;
+      }
+      .gift-card.size-postcard {
+        width: 320px;
+        height: 215px;
+      }
+      .card-script-title {
+        font-size: 1.85rem;
+      }
+      .card-title-serif {
+        font-size: 1.25rem;
+      }
+      .qr-container {
+        width: 88px;
+        height: 88px;
+        min-width: 88px;
+        padding: 4px;
+      }
     }
   </style>
 </head>
